@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
-export var acceleration = 500
-export var max_speed = 150
-export var roll_speed = 200
-export var friction = 500
-export var bullet_speed = 1000
+#export var acceleration = 500
+#export var max_speed = 150
+#export var roll_speed = 200
+#export var friction = 500
+#export var bullet_speed = 1000
 
 enum {
 	IDLE,
@@ -27,6 +27,7 @@ onready var animation_tree = $AnimationTree
 onready var animation_state = animation_tree.get("parameters/playback")
 onready var weapon_pivot = $WeaponPivot
 onready var timer_can_fire = $TimerCanFire
+onready var player_stats = $PlayerStats
 
 
 # Called when the node enters the scene tree for the first time.
@@ -72,10 +73,10 @@ func move_state(delta) -> void:
 		animation_tree.set("parameters/Melee/blend_position", facing_vector)
 		animation_tree.set("parameters/Move/blend_position", facing_vector)
 		animation_state.travel("Move")
-		velocity = velocity.move_toward(input_vector * max_speed, acceleration * delta)
+		velocity = velocity.move_toward(input_vector * player_stats.max_speed, player_stats.acceleration * delta)
 	else:
 		animation_state.travel("Idle")
-		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+		velocity = velocity.move_toward(Vector2.ZERO, player_stats.friction * delta)
 	
 	move()
 	
@@ -93,7 +94,7 @@ func move_state(delta) -> void:
 	
 
 func dodge_state() -> void:
-	velocity = roll_vector * roll_speed
+	velocity = roll_vector * player_stats.roll_speed
 	animation_state.travel("Dodge")
 	move()
 
@@ -109,11 +110,11 @@ func attack_state_weapon(delta) -> void:
 		var bullet_instance = bullet.instance()
 		bullet_instance.position = weapon_pivot.get_global_position()
 		bullet_instance.rotation_degrees = rotation_degrees
-		bullet_instance.apply_impulse(Vector2(), Vector2(bullet_speed, 0).rotated(rotation))
+		bullet_instance.apply_impulse(Vector2(), Vector2(player_stats.bullet_speed, 0).rotated(rotation))
 		get_tree().get_root().add_child(bullet_instance)
 		animation_state.travel("Weapon")
 		can_fire = false
-		timer_can_fire.start()
+		timer_can_fire.start(player_stats.timer_fire_weapon)
 	move()
 
 
