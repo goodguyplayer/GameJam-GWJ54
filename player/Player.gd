@@ -18,10 +18,15 @@ var state = MOVE
 var velocity = Vector2.ZERO
 var weapon = 0 # 0 for melee, 1 for weapon
 var roll_vector = Vector2.DOWN
+var bullet_speed = 1000
+var can_fire = true
+var bullet = preload("res://projectiles/bullet/Bullet.tscn")
 
 onready var animation_player = $AnimationPlayer
 onready var animation_tree = $AnimationTree
 onready var animation_state = animation_tree.get("parameters/playback")
+onready var weapon_pivot = $WeaponPivot
+onready var timer_can_fire = $TimerCanFire
 
 
 # Called when the node enters the scene tree for the first time.
@@ -72,15 +77,14 @@ func move_state(delta) -> void:
 		animation_state.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 	
-	velocity = move_and_slide(velocity)
+	move()
 	
-	if Input.is_action_just_pressed("ui_attack"):
-		match weapon:
-			0:
-				state = MELEE_ATTACK
-			1:
-				state = WEAPON_ATTACK
+	if Input.is_action_just_pressed("ui_attack_melee"):
+		state = MELEE_ATTACK
 				
+	if Input.is_action_just_pressed("ui_attack_ranged"):
+		state = WEAPON_ATTACK
+		
 	if Input.is_action_just_pressed("ui_curse"):
 		state = CURSE
 		
@@ -101,8 +105,15 @@ func attack_state_melee(delta) -> void:
 	
 	
 func attack_state_weapon(delta) -> void:
-#	velocity = velocity.move_toward(Vector2.ZERO, friction/2 * delta)
-	animation_state.travel("Weapon")
+	if can_fire:
+		var bullet_instance = bullet.instance()
+		bullet_instance.position = weapon_pivot.get_global_position()
+		bullet_instance.rotation_degrees = rotation_degrees
+		bullet_instance.apply_impulse(Vector2(), Vector2(bullet_speed, 0).rotated(rotation))
+		get_tree().get_root().add_child(bullet_instance)
+		animation_state.travel("Weapon")
+		can_fire = false
+		timer_can_fire.start()
 	move()
 
 
@@ -125,3 +136,7 @@ func dodge_animation_finished():
 	
 func curse_animation_finished():
 	state = MOVE
+
+
+func _on_TimerCanFire_timeout():
+	can_fire = true
