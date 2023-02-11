@@ -63,6 +63,17 @@ ui_curse={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Ground"
+2d_physics/layer_3="Player"
+2d_physics/layer_4="Player Hurtbox"
+2d_physics/layer_5="Player Hitbox"
+2d_physics/layer_6="Enemy"
+2d_physics/layer_7="Enemy Hurtbox"
+2d_physics/layer_8="Enemy Hitbox"
+
 [physics]
 
 common/enable_pause_aware_picking=true
