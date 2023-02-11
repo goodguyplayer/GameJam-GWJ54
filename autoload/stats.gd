@@ -7,6 +7,7 @@ export(int) var max_speed = 10 setget set_max_speed, get_max_speed
 export(int) var roll_speed = 10 setget set_roll_speed, get_roll_speed
 export(int) var friction = 10 setget set_friction, get_friction
 export(int) var bullet_speed = 10 setget set_bullet_speed, get_bullet_speed
+export(float) var timer_fire_weapon = 1 setget set_timer_fire_weapon, get_timer_fire_weapon
 var health = max_health setget set_health
 
 signal no_health
@@ -65,6 +66,14 @@ func set_bullet_speed(value : int) -> void:
 
 func get_bullet_speed() -> int:
 	return bullet_speed
+	
+
+func set_timer_fire_weapon(value : float) -> void:
+	timer_fire_weapon = value
+	
+
+func get_timer_fire_weapon() -> float:
+	return timer_fire_weapon
 	
 
 func _ready():
