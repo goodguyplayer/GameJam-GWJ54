@@ -4,6 +4,7 @@ export var acceleration = 500
 export var max_speed = 150
 export var roll_speed = 200
 export var friction = 500
+export var bullet_speed = 1000
 
 enum {
 	IDLE,
@@ -18,7 +19,6 @@ var state = MOVE
 var velocity = Vector2.ZERO
 var weapon = 0 # 0 for melee, 1 for weapon
 var roll_vector = Vector2.DOWN
-var bullet_speed = 1000
 var can_fire = true
 var bullet = preload("res://projectiles/bullet/Bullet.tscn")
 
