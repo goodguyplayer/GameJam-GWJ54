@@ -29,6 +29,10 @@ func _ready():
 	animation_tree.active = true
 
 
+func _process(delta):
+	look_at(get_global_mouse_position())
+
+
 func _physics_process(delta):
 	match state:
 		MOVE:
@@ -55,12 +59,13 @@ func move_state(delta) -> void:
 	
 	if input_vector != Vector2.ZERO:
 		roll_vector = input_vector
-		animation_tree.set("parameters/Idle/blend_position", input_vector)
-		animation_tree.set("parameters/Curse/blend_position", input_vector)
-		animation_tree.set("parameters/Dodge/blend_position", input_vector)
-		animation_tree.set("parameters/Weapon/blend_position", input_vector)
-		animation_tree.set("parameters/Melee/blend_position", input_vector)
-		animation_tree.set("parameters/Move/blend_position", input_vector)
+		var facing_vector = get_global_mouse_position()
+		animation_tree.set("parameters/Idle/blend_position", facing_vector)
+		animation_tree.set("parameters/Curse/blend_position", facing_vector)
+		animation_tree.set("parameters/Dodge/blend_position", facing_vector)
+		animation_tree.set("parameters/Weapon/blend_position", facing_vector)
+		animation_tree.set("parameters/Melee/blend_position", facing_vector)
+		animation_tree.set("parameters/Move/blend_position", facing_vector)
 		animation_state.travel("Move")
 		velocity = velocity.move_toward(input_vector * max_speed, acceleration * delta)
 	else:
