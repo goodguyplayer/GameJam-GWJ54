@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 0.984615, 0.984615 )
+
+[node name="Floor" type="Area2D"]
+position = Vector2( 0.25, -0.25 )
+scale = Vector2( 16.25, 16.25 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.0153846, 0.0153846 )
+shape = SubResource( 1 )
