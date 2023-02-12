@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://player/Player.gd" type="Script" id=2]
@@ -144,6 +144,14 @@ tracks/0/keys = {
 "method": "curse_animation_finished"
 } ]
 }
+
+[sub_resource type="Animation" id=83]
+resource_name = "death_default"
+length = 0.4
+
+[sub_resource type="Animation" id=84]
+resource_name = "death_fall"
+length = 0.4
 
 [sub_resource type="Animation" id=15]
 resource_name = "dodge_down"
@@ -850,6 +858,8 @@ anims/curse_down = SubResource( 44 )
 anims/curse_left = SubResource( 45 )
 anims/curse_right = SubResource( 46 )
 anims/curse_up = SubResource( 47 )
+anims/death_default = SubResource( 83 )
+anims/death_fall = SubResource( 84 )
 anims/dodge_down = SubResource( 15 )
 anims/dodge_left = SubResource( 16 )
 anims/dodge_right = SubResource( 17 )
@@ -916,6 +926,7 @@ bullet_speed = 1000
 timer_fire_weapon = 0.6
 
 [connection signal="timeout" from="TimerCanFire" to="." method="_on_TimerCanFire_timeout"]
+[connection signal="no_health" from="PlayerStats" to="." method="_on_PlayerStats_no_health"]
 
 [editable path="MeeleHitboxPivot/Hitbox"]
 [editable path="Hurtbox"]

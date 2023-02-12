@@ -141,3 +141,8 @@ func curse_animation_finished():
 
 func _on_TimerCanFire_timeout():
 	can_fire = true
+
+
+func _on_PlayerStats_no_health():
+	animation_player.play("death_default")
+	queue_free()
