@@ -900,6 +900,8 @@ height = 0.0
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0, 8 )
+collision_layer = 4
+collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -972,6 +974,8 @@ position = Vector2( 0, 24 )
 rotation = 1.5708
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( 0, -8 )
@@ -989,6 +993,7 @@ friction = 500
 bullet_speed = 1000
 timer_fire_weapon = 0.6
 
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="TimerCanFire" to="." method="_on_TimerCanFire_timeout"]
 [connection signal="no_health" from="PlayerStats" to="." method="_on_PlayerStats_no_health"]
 

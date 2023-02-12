@@ -33,7 +33,7 @@ onready var player_stats = $PlayerStats
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	animation_tree.active = true
-
+	
 
 func _process(delta):
 	look_at(get_global_mouse_position())
@@ -137,6 +137,11 @@ func dodge_animation_finished():
 	
 func curse_animation_finished():
 	state = MOVE
+	
+
+func player_entered_floor_hole():
+	animation_player.play("death_fall")
+	queue_free()
 
 
 func _on_TimerCanFire_timeout():
@@ -146,3 +151,9 @@ func _on_TimerCanFire_timeout():
 func _on_PlayerStats_no_health():
 	animation_player.play("death_default")
 	queue_free()
+
+
+func _on_Hurtbox_area_entered(area):
+	if "Floor" in area.name:
+		player_entered_floor_hole()
+		Globalsignals.emit_signal("player_entered_hole")
