@@ -72,6 +72,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Vector2( -22, -8 ) ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("CursePivot:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 24 ) ]
+}
 
 [sub_resource type="Animation" id=44]
 resource_name = "curse_down"
@@ -89,6 +101,18 @@ tracks/0/keys = {
 "args": [  ],
 "method": "curse_animation_finished"
 } ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CursePivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 24 ) ]
 }
 
 [sub_resource type="Animation" id=45]
@@ -108,6 +132,18 @@ tracks/0/keys = {
 "method": "curse_animation_finished"
 } ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("CursePivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -32, -8 ) ]
+}
 
 [sub_resource type="Animation" id=46]
 resource_name = "curse_right"
@@ -126,6 +162,18 @@ tracks/0/keys = {
 "method": "curse_animation_finished"
 } ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("CursePivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 32, -8 ) ]
+}
 
 [sub_resource type="Animation" id=47]
 resource_name = "curse_up"
@@ -143,6 +191,18 @@ tracks/0/keys = {
 "args": [  ],
 "method": "curse_animation_finished"
 } ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CursePivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -40 ) ]
 }
 
 [sub_resource type="Animation" id=83]
@@ -905,6 +965,10 @@ shape = SubResource( 82 )
 
 [node name="WeaponPivot" type="Position2D" parent="."]
 position = Vector2( -22, -8 )
+rotation = 1.5708
+
+[node name="CursePivot" type="Position2D" parent="."]
+position = Vector2( 0, 24 )
 rotation = 1.5708
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
