@@ -13,6 +13,10 @@ config_version=4
 config/name="GameJam-Gwj54"
 config/icon="res://icon.png"
 
+[autoload]
+
+Globalsignals="*res://autoload/globalsignals.gd"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
