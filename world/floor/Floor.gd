@@ -14,4 +14,3 @@ func change_collision_swap():
 	
 func change_collision(value : bool) -> void:
 	collision_shape_2d.disabled = value
-	
