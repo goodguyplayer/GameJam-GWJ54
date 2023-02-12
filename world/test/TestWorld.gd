@@ -23,9 +23,6 @@ func _ready():
 	timer.start(0.5)
 
 
-
-
-
 func _on_Timer_timeout():
 	for i in tile_list:
 		var random_numbered = rng.randi_range(0,1)
