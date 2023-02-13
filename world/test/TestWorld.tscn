@@ -45,6 +45,6 @@ one_shot = true
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
 [node name="EnemyTemplate" parent="." instance=ExtResource( 4 )]
-position = Vector2( 224, 160 )
+position = Vector2( 160, 224 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
