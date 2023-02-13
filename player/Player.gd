@@ -160,3 +160,7 @@ func _on_Hurtbox_area_entered(area):
 	if "Floor" in area.name:
 		player_entered_floor_hole()
 		Globalsignals.emit_signal("player_entered_hole")
+	else:
+		match area.hitbox_name:
+			"Melee":
+				player_stats.health -= area.damage
