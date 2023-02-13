@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://world/test/TestWorld.gd" type="Script" id=1]
 [ext_resource path="res://world/test/floortempTilemap.png" type="Texture" id=2]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://enemy/scenes/EnemyTemplate.tscn" type="PackedScene" id=4]
 
 [sub_resource type="TileSet" id=1]
 0/name = "floortempTilemap.png 0"
@@ -42,5 +43,8 @@ wait_time = 0.5
 one_shot = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
+
+[node name="EnemyTemplate" parent="." instance=ExtResource( 4 )]
+position = Vector2( 224, 160 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

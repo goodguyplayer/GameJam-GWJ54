@@ -28,13 +28,13 @@ onready var animation_state = animation_tree.get("parameters/playback")
 onready var weapon_pivot = $WeaponPivot
 onready var timer_can_fire = $TimerCanFire
 onready var player_stats = $PlayerStats
-onready var meele_hitbox = $MeeleHitboxPivot/MeeleHitbox
+onready var melee_hitbox = $MeleeHitboxPivot/MeleeHitbox
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	animation_tree.active = true
-	meele_hitbox.knockback_vector = roll_vector
+	melee_hitbox.knockback_vector = roll_vector
 	
 
 func _process(delta):
@@ -67,7 +67,7 @@ func move_state(delta) -> void:
 	
 	if input_vector != Vector2.ZERO:
 		roll_vector = input_vector
-		meele_hitbox.knockback_vector = input_vector
+		melee_hitbox.knockback_vector = input_vector
 		var facing_vector = get_global_mouse_position()
 		animation_tree.set("parameters/Idle/blend_position", facing_vector)
 		animation_tree.set("parameters/Curse/blend_position", facing_vector)

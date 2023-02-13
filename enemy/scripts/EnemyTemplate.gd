@@ -26,12 +26,14 @@ func enemy_entered_floor_hole():
 
 
 func _on_EnemyHurtbox_area_entered(area):
+	print(area.name)
+	if "Floor" in area.name:
+		enemy_entered_floor_hole()
+		Globalsignals.emit_signal("enemy_entered_hole")
 	match area.name:
-		"Floor":
-			enemy_entered_floor_hole()
-			Globalsignals.emit_signal("enemy_entered_hole")
-		"Meele":
+		"MeleeHitbox":
 			enemy_stats.health -= area.damage
+			print(enemy_stats.health)
 		"BulletHitbox":
 			enemy_stats.health -= area.damage
 
