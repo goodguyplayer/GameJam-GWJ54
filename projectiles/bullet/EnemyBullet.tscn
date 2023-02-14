@@ -10,4 +10,6 @@ collision_layer = 128
 collision_mask = 8
 hitbox_name = "Bullet"
 
+[connection signal="area_entered" from="BulletHitbox" to="." method="_on_BulletHitbox_area_entered"]
+
 [editable path="BulletHitbox"]
