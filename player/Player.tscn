@@ -91,122 +91,18 @@ tracks/5/keys = {
 [sub_resource type="Animation" id=44]
 resource_name = "curse_down"
 length = 0.4
-tracks/0/type = "method"
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.4 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "curse_animation_finished"
-} ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CursePivot:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 24 ) ]
-}
 
 [sub_resource type="Animation" id=45]
 resource_name = "curse_left"
 length = 0.4
-tracks/0/type = "method"
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.4 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "curse_animation_finished"
-} ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CursePivot:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -32, -8 ) ]
-}
 
 [sub_resource type="Animation" id=46]
 resource_name = "curse_right"
 length = 0.4
-tracks/0/type = "method"
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.4 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "curse_animation_finished"
-} ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CursePivot:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 32, -8 ) ]
-}
 
 [sub_resource type="Animation" id=47]
 resource_name = "curse_up"
 length = 0.4
-tracks/0/type = "method"
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.4 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "curse_animation_finished"
-} ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CursePivot:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, -40 ) ]
-}
 
 [sub_resource type="Animation" id=83]
 resource_name = "death_default"
@@ -592,122 +488,18 @@ length = 0.4
 [sub_resource type="Animation" id=48]
 resource_name = "weapon_down"
 length = 0.5
-tracks/0/type = "method"
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "attack_animation_finished"
-} ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("WeaponPivot:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 24 ) ]
-}
 
 [sub_resource type="Animation" id=49]
 resource_name = "weapon_left"
 length = 0.5
-tracks/0/type = "method"
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "attack_animation_finished"
-} ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("WeaponPivot:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -32, -8 ) ]
-}
 
 [sub_resource type="Animation" id=50]
 resource_name = "weapon_right"
 length = 0.5
-tracks/0/type = "method"
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "attack_animation_finished"
-} ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("WeaponPivot:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 32, -8 ) ]
-}
 
 [sub_resource type="Animation" id=51]
 resource_name = "weapon_up"
 length = 0.5
-tracks/0/type = "method"
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "attack_animation_finished"
-} ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("WeaponPivot:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, -40 ) ]
-}
 
 [sub_resource type="AnimationNodeAnimation" id=62]
 animation = "curse_down"
@@ -890,7 +682,7 @@ states/Weapon/node = SubResource( 56 )
 states/Weapon/position = Vector2( -43, 93 )
 transitions = [ "Idle", "Move", SubResource( 38 ), "Move", "Idle", SubResource( 39 ), "Idle", "Weapon", SubResource( 72 ), "Weapon", "Idle", SubResource( 73 ), "Idle", "Melee", SubResource( 74 ), "Melee", "Idle", SubResource( 75 ), "Dodge", "Idle", SubResource( 76 ), "Idle", "Dodge", SubResource( 77 ), "Idle", "Curse", SubResource( 78 ), "Curse", "Idle", SubResource( 79 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -453.645, -31 )
+graph_offset = Vector2( -448.645, -27 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=32]
 

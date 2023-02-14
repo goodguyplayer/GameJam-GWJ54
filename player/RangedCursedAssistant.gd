@@ -8,7 +8,9 @@ onready var player_stats = $"../PlayerStats"
 var bullet = preload("res://projectiles/bullet/PlayerBullet.tscn")
 var curse = preload("res://projectiles/bullet/PlayerBullet.tscn")
 
-
+func _process(delta):
+	look_at(get_global_mouse_position())
+	
 
 func ranged_attack(delta) -> void:
 	var bullet_instance = bullet.instance()
