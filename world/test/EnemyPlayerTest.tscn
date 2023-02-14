@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://enemy/scenes/EnemyRanged.tscn" type="PackedScene" id=1]
+[ext_resource path="res://enemy/scenes/EnemyMelee.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 488, 288 )
+
+[node name="EnemyMelee" parent="." instance=ExtResource( 2 )]
+position = Vector2( 200, 264 )
+
+[node name="EnemyRanged" parent="." instance=ExtResource( 1 )]
+position = Vector2( 784, 272 )
+
+[node name="EnemyRanged2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 792, 104 )
+
+[node name="EnemyRanged3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 768, 496 )
+
+[node name="EnemyMelee2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 200, 432 )
+
+[node name="EnemyMelee3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 192, 96 )
