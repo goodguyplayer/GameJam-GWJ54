@@ -20,6 +20,7 @@ var velocity = Vector2.ZERO
 var weapon = 0 # 0 for melee, 1 for weapon
 var roll_vector = Vector2.DOWN
 var can_fire = true
+var can_curse = true
 var bullet = preload("res://projectiles/bullet/PlayerBullet.tscn")
 
 onready var animation_player = $AnimationPlayer
@@ -27,8 +28,10 @@ onready var animation_tree = $AnimationTree
 onready var animation_state = animation_tree.get("parameters/playback")
 onready var weapon_pivot = $WeaponPivot
 onready var timer_can_fire = $TimerCanFire
+onready var timer_can_curse = $TimerCanCurse
 onready var player_stats = $PlayerStats
 onready var melee_hitbox = $MeleeHitboxPivot/MeleeHitbox
+onready var ranged_cursed_assistant = $RangedCursedAssistant
 
 
 # Called when the node enters the scene tree for the first time.
@@ -38,7 +41,8 @@ func _ready():
 	
 
 func _process(delta):
-	look_at(get_global_mouse_position())
+#	look_at(get_global_mouse_position())
+	ranged_cursed_assistant.look_at(get_global_mouse_position())
 
 
 func _physics_process(delta):
@@ -87,10 +91,18 @@ func move_state(delta) -> void:
 		state = MELEE_ATTACK
 				
 	if Input.is_action_just_pressed("ui_attack_ranged"):
-		state = WEAPON_ATTACK
+		if can_fire:
+			ranged_cursed_assistant.ranged_attack(delta)
+			animation_state.travel("Weapon")
+			can_fire = false
+			timer_can_fire.start(player_stats.timer_fire_weapon)
 		
 	if Input.is_action_just_pressed("ui_curse"):
-		state = CURSE
+		if can_curse:
+			ranged_cursed_assistant.cursed_attack(delta)
+			animation_state.travel("Weapon")
+			can_fire = false
+			timer_can_curse.start(player_stats.timer_fire_weapon)
 		
 	if Input.is_action_just_pressed("ui_dodge"):
 		state = ROLL
@@ -103,21 +115,11 @@ func dodge_state() -> void:
 
 
 func attack_state_melee(delta) -> void:
-#	velocity = velocity.move_toward(Vector2.ZERO, friction/2 * delta)
 	animation_state.travel("Melee")
 	move()
 	
 	
 func attack_state_weapon(delta) -> void:
-	if can_fire:
-		var bullet_instance = bullet.instance()
-		bullet_instance.position = weapon_pivot.get_global_position()
-		bullet_instance.rotation_degrees = rotation_degrees
-		bullet_instance.apply_impulse(Vector2(), Vector2(player_stats.bullet_speed, 0).rotated(rotation))
-		get_tree().get_root().add_child(bullet_instance)
-		animation_state.travel("Weapon")
-		can_fire = false
-		timer_can_fire.start(player_stats.timer_fire_weapon)
 	move()
 
 
@@ -164,3 +166,7 @@ func _on_Hurtbox_area_entered(area):
 		match area.hitbox_name:
 			"Melee":
 				player_stats.health -= area.damage
+
+
+func _on_TimerCanCurse_timeout():
+	can_curse = true
