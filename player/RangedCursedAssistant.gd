@@ -6,7 +6,7 @@ onready var sprite = $Sprite
 onready var player_stats = $"../PlayerStats"
 
 var bullet = preload("res://projectiles/bullet/PlayerBullet.tscn")
-var curse = preload("res://projectiles/bullet/PlayerBullet.tscn")
+var curse = preload("res://projectiles/bullet/Curse.tscn")
 
 func _process(delta):
 	look_at(get_global_mouse_position())
