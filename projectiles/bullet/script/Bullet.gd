@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+export var hitbox_name = ""
 export var damage = 1
 export var knockback_vector = Vector2.ZERO
 
