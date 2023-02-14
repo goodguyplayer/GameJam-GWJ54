@@ -12,13 +12,17 @@ var state = CHASE
 var knockback = Vector2.ZERO
 var velocity = Vector2.ZERO
 var wander_target_range = 4
+var can_attack = true
 
+var bullet = preload("res://projectiles/bullet/EnemyBullet.tscn")
 
 onready var chase_trigger_box = $ChaseTriggerBox
 onready var enemy_hurtbox = $EnemyHurtbox
 onready var enemy_bullet_spawn = $EnemyBulletSpawn
 onready var enemy_stats = $EnemyStats
 onready var wander_timer = $WanderTimer
+onready var vector_assistant = $VectorAssistant
+onready var timer_can_attack = $TimerCanAttack
 
 
 
@@ -48,7 +52,13 @@ func _physics_process(delta):
 		CHASE:
 			var player = chase_trigger_box.player
 			if player != null:
+				vector_assistant.look_at(player.global_position)
 				accelerate_towards_point(player.global_position, delta)
+				if can_attack:
+					velocity = velocity.move_toward(Vector2.ZERO, enemy_stats.friction * delta)
+					vector_assistant.ranged_attack(delta)
+					can_attack = false
+					timer_can_attack.start(enemy_stats.timer_fire_weapon)
 			else:
 				state = IDLE
 		ATTACK:
@@ -99,3 +109,7 @@ func _on_EnemyHurtbox_area_entered(area):
 
 func _on_EnemyStats_no_health():
 	queue_free()
+
+
+func _on_TimerCanAttack_timeout():
+	can_attack = true
