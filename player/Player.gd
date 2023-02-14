@@ -26,7 +26,6 @@ var bullet = preload("res://projectiles/bullet/PlayerBullet.tscn")
 onready var animation_player = $AnimationPlayer
 onready var animation_tree = $AnimationTree
 onready var animation_state = animation_tree.get("parameters/playback")
-onready var weapon_pivot = $WeaponPivot
 onready var timer_can_fire = $TimerCanFire
 onready var timer_can_curse = $TimerCanCurse
 onready var player_stats = $PlayerStats

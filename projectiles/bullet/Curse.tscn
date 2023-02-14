@@ -3,7 +3,7 @@
 [ext_resource path="res://projectiles/bullet/Bullet.tscn" type="PackedScene" id=1]
 
 [node name="PlayerBullet" instance=ExtResource( 1 )]
-hitbox_name = "Bullet"
+hitbox_name = "Curse"
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( -4.76837e-07, 4.76837e-07 )

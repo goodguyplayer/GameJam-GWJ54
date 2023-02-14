@@ -63,30 +63,6 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( -22, -8 ) ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("WeaponPivot:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -22, -8 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("CursePivot:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 24 ) ]
-}
 
 [sub_resource type="Animation" id=44]
 resource_name = "curse_down"
@@ -750,6 +726,17 @@ parameters/Melee/blend_position = Vector2( 0, 0 )
 parameters/Move/blend_position = Vector2( 0, 0 )
 parameters/Weapon/blend_position = Vector2( 0, 0 )
 
+[node name="RangedCursedAssistant" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, -8 )
+script = ExtResource( 8 )
+
+[node name="Sprite" parent="RangedCursedAssistant" index="0"]
+position = Vector2( 16, 1.42109e-14 )
+scale = Vector2( 0.2, 0.0639535 )
+
+[node name="End" parent="RangedCursedAssistant/Sprite" index="1"]
+position = Vector2( 80, 0 )
+
 [node name="MeleeHitboxPivot" type="Position2D" parent="."]
 position = Vector2( -22, -8 )
 rotation = 1.5708
@@ -762,14 +749,6 @@ script = ExtResource( 6 )
 [node name="CollisionShape2D" parent="MeleeHitboxPivot/MeleeHitbox" index="0"]
 rotation = 1.5708
 shape = SubResource( 82 )
-
-[node name="WeaponPivot" type="Position2D" parent="."]
-position = Vector2( -22, -8 )
-rotation = 1.5708
-
-[node name="CursePivot" type="Position2D" parent="."]
-position = Vector2( 0, 24 )
-rotation = 1.5708
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
 collision_layer = 8
@@ -789,17 +768,6 @@ friction = 500
 bullet_speed = 1000
 timer_fire_weapon = 0.6
 
-[node name="RangedCursedAssistant" parent="." instance=ExtResource( 7 )]
-position = Vector2( 0, -8 )
-script = ExtResource( 8 )
-
-[node name="Sprite" parent="RangedCursedAssistant" index="0"]
-position = Vector2( 16, 1.42109e-14 )
-scale = Vector2( 0.2, 0.0639535 )
-
-[node name="End" parent="RangedCursedAssistant/Sprite" index="1"]
-position = Vector2( 80, 0 )
-
 [node name="TimerCanFire" type="Timer" parent="."]
 wait_time = 0.5
 
@@ -811,6 +779,6 @@ wait_time = 0.5
 [connection signal="timeout" from="TimerCanFire" to="." method="_on_TimerCanFire_timeout"]
 [connection signal="timeout" from="TimerCanCurse" to="." method="_on_TimerCanCurse_timeout"]
 
+[editable path="RangedCursedAssistant"]
 [editable path="MeleeHitboxPivot/MeleeHitbox"]
 [editable path="Hurtbox"]
-[editable path="RangedCursedAssistant"]

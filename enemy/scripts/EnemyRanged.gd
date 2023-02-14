@@ -13,6 +13,7 @@ var knockback = Vector2.ZERO
 var velocity = Vector2.ZERO
 var wander_target_range = 4
 var can_attack = true
+var is_cursed = false
 
 var bullet = preload("res://projectiles/bullet/EnemyBullet.tscn")
 
@@ -95,16 +96,19 @@ func enemy_entered_floor_hole():
 
 
 func _on_EnemyHurtbox_area_entered(area):
-	print(area.name)
 	if "Floor" in area.name:
 		enemy_entered_floor_hole()
 		Globalsignals.emit_signal("enemy_entered_hole")
-	match area.name:
-		"MeleeHitbox":
-			enemy_stats.health -= area.damage
-			print(enemy_stats.health)
-		"BulletHitbox":
-			enemy_stats.health -= area.damage
+	else:
+		match area.hitbox_name:
+			"Melee":
+				if is_cursed:
+					enemy_stats.health -= area.damage
+			"Bullet":
+				if is_cursed:
+					enemy_stats.health -= area.damage
+			"Curse":
+				is_cursed = true
 
 
 func _on_EnemyStats_no_health():
