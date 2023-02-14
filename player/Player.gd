@@ -165,7 +165,9 @@ func _on_Hurtbox_area_entered(area):
 		match area.hitbox_name:
 			"Melee":
 				player_stats.health -= area.damage
-
+		
+			"Bullet":
+				player_stats.health -= area.damage
 
 func _on_TimerCanCurse_timeout():
 	can_curse = true

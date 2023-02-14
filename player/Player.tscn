@@ -781,6 +781,7 @@ rotation = 1.5708
 shape = SubResource( 81 )
 
 [node name="PlayerStats" parent="." instance=ExtResource( 5 )]
+max_health = 5
 acceleration = 500
 max_speed = 150
 roll_speed = 200
