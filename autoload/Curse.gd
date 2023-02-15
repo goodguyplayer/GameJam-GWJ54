@@ -3,6 +3,7 @@ extends Node
 var curse_array = [
 	preload("res://resources/curses/haste_curse.tres"),
 	preload("res://resources/curses/slow_curse.tres"),
+	preload("res://resources/curses/curse_of_giantism.tres"),
 #	preload(),
 ]
 
@@ -47,10 +48,12 @@ func pick_random_state(state_list):
 func obtain_curse_enemy_ranged() -> Dictionary:
 	return {"stats" : current_curse.enemy_ranged_resource, 
 		"damage" : current_curse.ranged_resource, 
-		"effect" : current_curse.effect_resource}
+		"effect" : current_curse.effect_resource,
+		}
 		
 		
 func obtain_curse_enemy_melee() -> Dictionary:
 	return {"stats" : current_curse.enemy_melee_resource, 
 		"damage" : current_curse.melee_resource, 
-		"effect" : current_curse.effect_resource}
+		"effect" : current_curse.effect_resource,
+		}

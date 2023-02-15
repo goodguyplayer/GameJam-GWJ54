@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=7 format=2]
+[gd_resource type="Resource" load_steps=8 format=2]
 
 [ext_resource path="res://autoload/curseeffect.gd" type="Script" id=1]
 [ext_resource path="res://resources/stats/enemy_ranged/stats_ranged_enemy_haste.tres" type="Resource" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://resources/stats/ranged/stats_default_ranged.tres" type="Resource" id=4]
 [ext_resource path="res://resources/stats/melee/stats_default_melee.tres" type="Resource" id=5]
 [ext_resource path="res://resources/stats/player/stats_player_haste.tres" type="Resource" id=6]
+[ext_resource path="res://resources/stats/effect/default_effect.gd" type="Script" id=7]
 
 [resource]
 script = ExtResource( 1 )
@@ -16,3 +17,4 @@ enemy_ranged_resource = ExtResource( 2 )
 enemy_melee_resource = ExtResource( 3 )
 melee_resource = ExtResource( 5 )
 ranged_resource = ExtResource( 4 )
+effect_resource = ExtResource( 7 )

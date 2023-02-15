@@ -151,6 +151,12 @@ func player_entered_floor_hole():
 func _load_curse_effect(resource : Dictionary):
 	player_stats.load_new_resource(resource["stats"])
 	melee_hitbox.load_new_stats(resource["damage_melee"])
+	print("Before effect check")
+	if resource["effect"] != null:# and resource["effect"].has_method("trigger_effect"):
+		var new_effect = load(resource["effect"].resource_path).new()
+		new_effect.trigger_effect(self)
+	else:
+		pass
 #	ranged_cursed_assistant.curse_load_new_bullet(resource["damage_ranged"])
 
 

@@ -90,6 +90,11 @@ func enemy_cursed():
 	is_cursed = true
 	enemy_hitbox.load_new_stats(cursed["damage"])
 	enemy_stats.load_new_resource(cursed["stats"])
+	if cursed["effect"] != null:# and resource["effect"].has_method("trigger_effect"):
+		var new_effect = load(cursed["effect"].resource_path).new()
+		new_effect.trigger_effect(self)
+	else:
+		pass
 
 
 func _on_EnemyHurtbox_area_entered(area):
@@ -105,7 +110,8 @@ func _on_EnemyHurtbox_area_entered(area):
 				if is_cursed:
 					enemy_stats.health -= area.damage
 			"Curse":
-				enemy_cursed()
+				if not is_cursed:
+					enemy_cursed()
 
 
 func _on_EnemyStats_no_health():

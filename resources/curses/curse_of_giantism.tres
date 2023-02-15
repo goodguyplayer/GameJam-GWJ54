@@ -4,14 +4,14 @@
 [ext_resource path="res://resources/stats/player/stats_player_default.tres" type="Resource" id=2]
 [ext_resource path="res://resources/stats/enemy_melee/stats_melee_enemy_default.tres" type="Resource" id=3]
 [ext_resource path="res://resources/stats/enemy_ranged/stats_ranged_enemy_default.tres" type="Resource" id=4]
-[ext_resource path="res://resources/stats/ranged/stats_default_ranged.tres" type="Resource" id=5]
+[ext_resource path="res://resources/stats/ranged/stats_ranged_doubled.tres" type="Resource" id=5]
 [ext_resource path="res://resources/stats/melee/stats_default_melee.tres" type="Resource" id=6]
-[ext_resource path="res://resources/stats/effect/default_effect.gd" type="Script" id=7]
+[ext_resource path="res://resources/stats/effect/curse_of_giantism.gd" type="Script" id=7]
 
 [resource]
 script = ExtResource( 1 )
-CurseName = "Default"
-CurseDesc = "Nothing special beans"
+CurseName = "Curse of Giantism"
+CurseDesc = "Lookin' chunky there"
 player_resource = ExtResource( 2 )
 enemy_ranged_resource = ExtResource( 4 )
 enemy_melee_resource = ExtResource( 3 )

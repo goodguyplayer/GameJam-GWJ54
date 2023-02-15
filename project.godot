@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://autoload/curseeffect.gd"
 }, {
 "base": "Resource",
+"class": "CursedEffect",
+"language": "GDScript",
+"path": "res://autoload/cursed_effects.gd"
+}, {
+"base": "Resource",
 "class": "MeleeStats",
 "language": "GDScript",
 "path": "res://autoload/melee_stats.gd"
@@ -31,6 +36,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "CurseEffect": "",
+"CursedEffect": "",
 "MeleeStats": "",
 "RangedStats": "",
 "StatsResource": ""
