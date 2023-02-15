@@ -53,6 +53,11 @@ config/icon="res://icon.png"
 Globalsignals="*res://autoload/globalsignals.gd"
 Curse="*res://autoload/Curse.tscn"
 
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
