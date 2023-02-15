@@ -9,7 +9,7 @@
 [ext_resource path="res://enemy/scripts/WanderTimer.gd" type="Script" id=7]
 [ext_resource path="res://enemy/scripts/EnemyVectorAttack.gd" type="Script" id=8]
 [ext_resource path="res://resources/tools/scenes/VectorAssistant.tscn" type="PackedScene" id=9]
-[ext_resource path="res://resources/stats/stats_ranged_enemy_default.tres" type="Resource" id=10]
+[ext_resource path="res://resources/stats/enemy_ranged/stats_ranged_enemy_default.tres" type="Resource" id=10]
 
 [sub_resource type="CircleShape2D" id=80]
 radius = 8.0

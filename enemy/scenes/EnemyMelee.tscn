@@ -9,7 +9,7 @@
 [ext_resource path="res://enemy/scripts/WanderTimer.gd" type="Script" id=7]
 [ext_resource path="res://hurttriggerhitbox/Hitbox.tscn" type="PackedScene" id=8]
 [ext_resource path="res://enemy/scripts/EnemyMeleeHitbox.gd" type="Script" id=9]
-[ext_resource path="res://resources/stats/stats_melee_enemy_default.tres" type="Resource" id=10]
+[ext_resource path="res://resources/stats/enemy_melee/stats_melee_enemy_default.tres" type="Resource" id=10]
 
 [sub_resource type="CircleShape2D" id=80]
 radius = 8.0
