@@ -97,7 +97,8 @@ func enemy_entered_floor_hole():
 func enemy_cursed():
 	var cursed = Curse.obtain_curse_enemy_ranged()
 	is_cursed = true
-	bullet.load_new_stats(cursed["damage"])
+	vector_assistant.is_cursed = true
+#	bullet.load_new_stats(cursed["damage"])
 	enemy_stats.load_new_resource(cursed["stats"])
 
 

@@ -37,6 +37,7 @@ onready var ranged_cursed_assistant = $RangedCursedAssistant
 func _ready():
 	animation_tree.active = true
 	melee_hitbox.knockback_vector = roll_vector
+	Globalsignals.connect("curse_player_new", self, "_load_curse_effect")
 	
 
 #func _process(delta):
@@ -98,7 +99,7 @@ func move_state(delta) -> void:
 		if can_curse:
 			ranged_cursed_assistant.cursed_attack(delta)
 			animation_state.travel("Weapon")
-			can_fire = false
+			can_curse = false
 			timer_can_curse.start(player_stats.timer_fire_weapon)
 		
 	if Input.is_action_just_pressed("ui_dodge"):
@@ -147,8 +148,10 @@ func player_entered_floor_hole():
 	queue_free()
 
 
-func _load_curse_effect(resource : Resource):
-	pass
+func _load_curse_effect(resource : Dictionary):
+	player_stats.load_new_resource(resource["stats"])
+	melee_hitbox.load_new_stats(resource["damage_melee"])
+#	ranged_cursed_assistant.curse_load_new_bullet(resource["damage_ranged"])
 
 
 func _on_TimerCanFire_timeout():

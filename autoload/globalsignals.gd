@@ -4,6 +4,7 @@ extends Node
 signal player_entered_hole()
 signal enemy_entered_hole()
 
+signal curse_new(curse)
 signal curse_player_new(curse)
 signal curse_enemy_ranged_new(curse)
 signal curse_enemy_melee_new(curse)

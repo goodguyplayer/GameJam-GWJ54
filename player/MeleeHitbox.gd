@@ -10,5 +10,5 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _load_new_stats(resource : Resource):
+func load_new_stats(resource : Resource):
 	damage = resource.damage

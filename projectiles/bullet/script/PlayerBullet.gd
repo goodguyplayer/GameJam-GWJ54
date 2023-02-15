@@ -7,11 +7,7 @@ onready var bullet_hitbox = $BulletHitbox
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-func load_new_stats(resource : Resource):
-	bullet_hitbox.load_new_stats(resource)
+	bullet_hitbox.load_new_stats(Curse.current_curse.ranged_resource)
 
 
 func _on_BulletHitbox_area_entered(area):

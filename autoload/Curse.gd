@@ -1,19 +1,42 @@
 extends Node
 
 var curse_array = [
-	preload("res://resources/curses/default_curse.tres")
+	preload("res://resources/curses/haste_curse.tres"),
+	preload("res://resources/curses/slow_curse.tres"),
+#	preload(),
 ]
 
+var default_curse = preload("res://resources/curses/default_curse.tres")
 var current_curse 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	current_curse = pick_random_state(curse_array)
+	current_curse = default_curse
+	
 
 
-func change_curse(curse) -> void:
-	pass
+func change_curse() -> void:
+	if curse_array.size() == 0:
+		print("No more curses for you, byuddy")
+	else:
+		current_curse = pick_random_state(curse_array)
+		Globalsignals.emit_signal("curse_player_new", {
+			"stats" : current_curse.player_resource, 
+			"damage_melee" : current_curse.melee_resource, 
+			"damage_ranged" : current_curse.ranged_resource, 
+			"effect" : current_curse.effect_resource
+		})
+
+
+func load_default_curse() -> void:
+	current_curse = default_curse
+	Globalsignals.emit_signal("curse_player_new", {
+		"stats" : current_curse.player_resource, 
+		"damage_melee" : current_curse.melee_resource, 
+		"damage_ranged" : current_curse.ranged_resource, 
+		"effect" : current_curse.effect_resource
+	})
 
 
 func pick_random_state(state_list):
