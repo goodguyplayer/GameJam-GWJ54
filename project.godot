@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "CurseEffect",
+"language": "GDScript",
+"path": "res://autoload/curseeffect.gd"
+} ]
+_global_script_class_icons={
+"CurseEffect": ""
+}
+
 [application]
 
 config/name="GameJam-Gwj54"
