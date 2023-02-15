@@ -15,7 +15,7 @@ func _ready():
 
 
 func _on_Start_Game_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://world/test/TestWorldDifferentCurses.tscn")
 
 
 func _on_Endless_pressed():
