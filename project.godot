@@ -15,12 +15,24 @@ _global_script_classes=[ {
 "path": "res://autoload/curseeffect.gd"
 }, {
 "base": "Resource",
+"class": "MeleeStats",
+"language": "GDScript",
+"path": "res://autoload/melee_stats.gd"
+}, {
+"base": "Resource",
+"class": "RangedStats",
+"language": "GDScript",
+"path": "res://autoload/ranged_stats.gd"
+}, {
+"base": "Resource",
 "class": "StatsResource",
 "language": "GDScript",
 "path": "res://autoload/stats_resource.gd"
 } ]
 _global_script_class_icons={
 "CurseEffect": "",
+"MeleeStats": "",
+"RangedStats": "",
 "StatsResource": ""
 }
 
@@ -32,6 +44,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Globalsignals="*res://autoload/globalsignals.gd"
+Curse="*res://autoload/Curse.tscn"
 
 [gui]
 

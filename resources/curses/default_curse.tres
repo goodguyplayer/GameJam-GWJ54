@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=7 format=2]
+
+[ext_resource path="res://autoload/curseeffect.gd" type="Script" id=1]
+[ext_resource path="res://resources/stats/stats_ranged_enemy_default.tres" type="Resource" id=2]
+[ext_resource path="res://resources/stats/stats_player_default.tres" type="Resource" id=3]
+[ext_resource path="res://resources/stats/stats_melee_enemy_default.tres" type="Resource" id=4]
+[ext_resource path="res://resources/stats/stats_default_ranged.tres" type="Resource" id=5]
+[ext_resource path="res://resources/stats/stats_default_melee.tres" type="Resource" id=6]
+
+[resource]
+script = ExtResource( 1 )
+CurseName = "Default"
+CurseDesc = "Nothing special beans"
+player_resource = ExtResource( 3 )
+enemy_ranged_resource = ExtResource( 2 )
+enemy_melee_resource = ExtResource( 4 )
+melee_resource = ExtResource( 6 )
+ranged_resource = ExtResource( 5 )

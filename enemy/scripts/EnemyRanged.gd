@@ -93,6 +93,12 @@ func accelerate_towards_point(point, delta):
 func enemy_entered_floor_hole():
 	pass
 	
+	
+func enemy_cursed():
+	var cursed = Curse.obtain_curse_enemy_ranged()
+	is_cursed = true
+	bullet.load_new_stats(cursed["damage"])
+	enemy_stats.load_new_resource(cursed["stats"])
 
 
 func _on_EnemyHurtbox_area_entered(area):

@@ -17,6 +17,7 @@ var is_cursed = false
 
 onready var chase_trigger_box = $ChaseTriggerBox
 onready var enemy_hurtbox = $EnemyHurtbox
+onready var enemy_hitbox = $EnemyHitbox
 onready var enemy_bullet_spawn = $EnemyBulletSpawn
 onready var enemy_stats = $EnemyStats
 onready var wander_timer = $WanderTimer
@@ -83,6 +84,12 @@ func accelerate_towards_point(point, delta):
 func enemy_entered_floor_hole():
 	pass
 	
+	
+func enemy_cursed():
+	var cursed = Curse.obtain_curse_enemy_ranged()
+	is_cursed = true
+	enemy_hitbox.load_new_stats(cursed["damage"])
+	enemy_stats.load_new_resource(cursed["stats"])
 
 
 func _on_EnemyHurtbox_area_entered(area):
@@ -98,7 +105,7 @@ func _on_EnemyHurtbox_area_entered(area):
 				if is_cursed:
 					enemy_stats.health -= area.damage
 			"Curse":
-				is_cursed = true
+				enemy_cursed()
 
 
 func _on_EnemyStats_no_health():

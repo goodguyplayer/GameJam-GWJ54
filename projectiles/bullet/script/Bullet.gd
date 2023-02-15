@@ -11,3 +11,6 @@ func _ready():
 
 func _on_BulletHitbox_area_entered(area):
 	queue_free()
+
+func _load_new_stats(resource : Resource):
+	damage = resource.damage
