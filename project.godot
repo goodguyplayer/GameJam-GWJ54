@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "CurseEffect",
 "language": "GDScript",
 "path": "res://autoload/curseeffect.gd"
+}, {
+"base": "Resource",
+"class": "StatsResource",
+"language": "GDScript",
+"path": "res://autoload/stats_resource.gd"
 } ]
 _global_script_class_icons={
-"CurseEffect": ""
+"CurseEffect": "",
+"StatsResource": ""
 }
 
 [application]

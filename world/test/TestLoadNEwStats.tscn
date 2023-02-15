@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://world/test/Testloadnewresource.gd" type="Script" id=1]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 392, 184 )
+
+[node name="Default" type="Button" parent="."]
+margin_left = 24.0
+margin_top = 40.0
+margin_right = 120.0
+margin_bottom = 80.0
+text = "Load_default"
+
+[node name="Fast" type="Button" parent="."]
+margin_left = 24.0
+margin_top = 96.0
+margin_right = 120.0
+margin_bottom = 136.0
+text = "Load_fast"
+
+[node name="Slow" type="Button" parent="."]
+margin_left = 24.0
+margin_top = 160.0
+margin_right = 120.0
+margin_bottom = 200.0
+text = "Load_slow"
+
+[connection signal="pressed" from="Default" to="." method="_on_Default_pressed"]
+[connection signal="pressed" from="Fast" to="." method="_on_Fast_pressed"]
+[connection signal="pressed" from="Slow" to="." method="_on_Slow_pressed"]

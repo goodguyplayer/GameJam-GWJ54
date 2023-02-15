@@ -147,6 +147,10 @@ func player_entered_floor_hole():
 	queue_free()
 
 
+func _load_curse_effect(resource : Resource):
+	pass
+
+
 func _on_TimerCanFire_timeout():
 	can_fire = true
 

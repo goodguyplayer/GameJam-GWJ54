@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://hurttriggerhitbox/Triggerbox.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://enemy/scripts/WanderTimer.gd" type="Script" id=7]
 [ext_resource path="res://enemy/scripts/EnemyVectorAttack.gd" type="Script" id=8]
 [ext_resource path="res://resources/tools/scenes/VectorAssistant.tscn" type="PackedScene" id=9]
+[ext_resource path="res://resources/stats/stats_ranged_enemy_default.tres" type="Resource" id=10]
 
 [sub_resource type="CircleShape2D" id=80]
 radius = 8.0
@@ -52,6 +53,7 @@ shape = SubResource( 82 )
 position = Vector2( 32, 0 )
 
 [node name="EnemyStats" parent="." instance=ExtResource( 4 )]
+stats_resource = ExtResource( 10 )
 acceleration = 300
 max_speed = 50
 roll_speed = 200

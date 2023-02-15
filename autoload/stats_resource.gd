@@ -1,7 +1,5 @@
-extends Node
-
-export var stats_resource : Resource
-
+extends Resource
+class_name StatsResource
 
 export(int) var max_health = 1 setget set_max_health
 export(int) var acceleration = 10 setget set_acceleration, get_acceleration
@@ -15,24 +13,6 @@ var health = max_health setget set_health
 signal no_health
 signal health_changed(value)
 signal max_health_changed(value)
-
-func load_new_resource(value : Resource) -> void:
-	stats_resource = value
-	set_max_health(value.max_health )
-	set_acceleration(value.acceleration)
-	set_max_speed(value.max_speed)
-	set_roll_speed(value.roll_speed)
-	set_friction(value.friction)
-	set_bullet_speed(value.bullet_speed)
-	set_timer_fire_weapon(value.timer_fire_weapon)
-#	max_health = value.max_health 
-#	acceleration = value.acceleration
-#	max_speed = value.max_speed
-#	roll_speed = value.roll_speed
-#	friction = value.friction
-#	bullet_speed = value.bullet_speed
-#	timer_fire_weapon = value.timer_fire_weapon
-	
 
 
 func set_max_health(value : int) -> void:
@@ -98,8 +78,3 @@ func get_timer_fire_weapon() -> float:
 
 func _ready():
 	self.health = max_health
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
