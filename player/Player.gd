@@ -31,6 +31,7 @@ onready var timer_can_curse = $TimerCanCurse
 onready var player_stats = $PlayerStats
 onready var melee_hitbox = $MeleeHitboxPivot/MeleeHitbox
 onready var ranged_cursed_assistant = $RangedCursedAssistant
+onready var remote_transform_2d = $RemoteTransform2D
 
 
 # Called when the node enters the scene tree for the first time.

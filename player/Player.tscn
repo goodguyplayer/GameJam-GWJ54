@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=84 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://player/Player.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://resources/tools/scenes/VectorAssistant.tscn" type="PackedScene" id=7]
 [ext_resource path="res://player/RangedCursedAssistant.gd" type="Script" id=8]
 [ext_resource path="res://resources/stats/player/stats_player_default.tres" type="Resource" id=9]
+[ext_resource path="res://world/scenes/Camera.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 8.0
@@ -775,6 +776,12 @@ wait_time = 0.5
 
 [node name="TimerCanCurse" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../Camera2D")
+
+[node name="Camera2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( 0, 0 )
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="PlayerStats" to="." method="_on_PlayerStats_no_health"]
