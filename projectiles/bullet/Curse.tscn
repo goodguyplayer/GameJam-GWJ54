@@ -4,6 +4,7 @@
 [ext_resource path="res://projectiles/bullet/script/PlayerBullet.gd" type="Script" id=2]
 
 [node name="PlayerBullet" instance=ExtResource( 1 )]
+collision_layer = 0
 script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
@@ -20,7 +21,5 @@ hitbox_name = "Curse"
 
 [node name="CollisionShape2D" parent="BulletHitbox" index="0"]
 position = Vector2( 0, 0 )
-
-[connection signal="area_entered" from="BulletHitbox" to="." method="_on_BulletHitbox_area_entered"]
 
 [editable path="BulletHitbox"]

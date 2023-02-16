@@ -12,7 +12,3 @@ func _ready():
 
 func _on_BulletHitbox_area_entered(area):
 	queue_free()
-
-
-func _on_PlayerBullet_body_entered(body):
-	queue_free()
