@@ -21,7 +21,7 @@ func _ready():
 
 
 func _on_Start_Game_pressed():
-	get_tree().change_scene("res://world/test/TestWorldDifferentCurses.tscn")
+	get_tree().change_scene("res://world/scenes/WorldDefault.tscn")
 
 
 func _on_Endless_pressed():
