@@ -781,9 +781,10 @@ wait_time = 0.5
 remote_path = NodePath("../Camera2D")
 
 [node name="Camera2D" parent="." instance=ExtResource( 10 )]
-position = Vector2( 0, 0 )
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="health_changed" from="PlayerStats" to="." method="_on_PlayerStats_health_changed"]
+[connection signal="max_health_changed" from="PlayerStats" to="." method="_on_PlayerStats_max_health_changed"]
 [connection signal="no_health" from="PlayerStats" to="." method="_on_PlayerStats_no_health"]
 [connection signal="timeout" from="TimerCanFire" to="." method="_on_TimerCanFire_timeout"]
 [connection signal="timeout" from="TimerCanCurse" to="." method="_on_TimerCanCurse_timeout"]

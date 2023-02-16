@@ -28,6 +28,7 @@ func change_curse() -> void:
 			"damage_ranged" : current_curse.ranged_resource, 
 			"effect" : current_curse.effect_resource
 		})
+		Globalsignals.emit_signal("curse_new", current_curse.CurseName)
 
 
 func load_default_curse() -> void:
@@ -38,6 +39,11 @@ func load_default_curse() -> void:
 		"damage_ranged" : current_curse.ranged_resource, 
 		"effect" : current_curse.effect_resource
 	})
+
+
+func get_curse():
+	return current_curse
+
 
 
 func pick_random_state(state_list):

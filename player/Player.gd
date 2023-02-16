@@ -184,3 +184,12 @@ func _on_Hurtbox_area_entered(area):
 
 func _on_TimerCanCurse_timeout():
 	can_curse = true
+
+
+func _on_PlayerStats_health_changed(value):
+	Globalsignals.emit_signal("health_changed", value)
+
+
+func _on_PlayerStats_max_health_changed(value):
+	Globalsignals.emit_signal("max_health_changed", value)
+	Globalsignals.emit_signal("health_changed", value)
