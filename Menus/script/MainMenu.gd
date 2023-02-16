@@ -7,11 +7,17 @@ onready var build_version = $VBoxContainer/TitleScreen/BuildVersion
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$"VBoxContainer/MenuOptions/VBoxContainer/Start Game".grab_focus()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	if OS.has_feature("debug"):
+		build_version.text = "Oh hi mark"
+	elif OS.has_feature("release"):
+		if OS.has_feature("Windows"):
+			build_version.text = "Build Version - Windows"
+		if OS.has_feature("X11"):
+			build_version.text = "Build Version - Linux"
+		if OS.has_feature("OSX"):
+			build_version.text = "Build Version - macOS"
+		if OS.has_feature("HTML5"):
+			build_version.text = "Build Version - Web Browser"
 
 
 func _on_Start_Game_pressed():
