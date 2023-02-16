@@ -12,6 +12,7 @@
 script = ExtResource( 1 )
 CurseName = "Curse of Snail"
 CurseDesc = "SNAIL! SNAIL! SNAIL! MOVE!"
+CurseImagePath = "res://icon.png"
 player_resource = ExtResource( 4 )
 enemy_ranged_resource = ExtResource( 2 )
 enemy_melee_resource = ExtResource( 3 )

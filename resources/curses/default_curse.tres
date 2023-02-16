@@ -12,6 +12,7 @@
 script = ExtResource( 1 )
 CurseName = "Default"
 CurseDesc = "Nothing special beans"
+CurseImagePath = "res://icon.png"
 player_resource = ExtResource( 2 )
 enemy_ranged_resource = ExtResource( 4 )
 enemy_melee_resource = ExtResource( 3 )

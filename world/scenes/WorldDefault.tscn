@@ -50,7 +50,7 @@ position = Vector2( 544, 144 )
 [node name="UI" parent="CanvasLayer" instance=ExtResource( 4 )]
 anchor_bottom = 0.0
 margin_left = 8.0
-margin_top = 568.0
+margin_top = 560.0
 margin_right = -8.0
 margin_bottom = 600.0
 

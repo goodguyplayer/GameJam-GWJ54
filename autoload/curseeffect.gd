@@ -3,6 +3,7 @@ class_name CurseEffect
 
 export (String) var CurseName = ""
 export (String) var CurseDesc = ""
+export (String) var CurseImagePath = ""
 export (Resource) var player_resource 
 export (Resource) var enemy_ranged_resource 
 export (Resource) var enemy_melee_resource 
