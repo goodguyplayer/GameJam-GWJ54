@@ -25,6 +25,7 @@
 script = ExtResource( 2 )
 
 [node name="Floor" type="TileMap" parent="."]
+pause_mode = 1
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
@@ -46,6 +47,7 @@ position = Vector2( 544, 144 )
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource( 4 )]
 anchor_bottom = 0.0

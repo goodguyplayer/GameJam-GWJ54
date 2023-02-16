@@ -20,6 +20,8 @@ func _ready():
 
 
 func load_new_curse() -> void:
+	get_tree().paused = true
+	print(get_tree())
 	if Curse.get_curse_array().size() >= 3:
 		var three_curses = Curse.get_three_curses()
 		update_container(curse_1, three_curses[0])
@@ -48,12 +50,18 @@ func update_container(container, curse):
 
 
 func _on_Curse1Button_pressed():
+	get_tree().paused = false
 	Curse.set_current_curse(0)
+	queue_free()
 
 
 func _on_Curse2Button_pressed():
+	get_tree().paused = false
 	Curse.set_current_curse(1)
+	queue_free()
 
 
 func _on_Curse3Button_pressed():
+	get_tree().paused = false
 	Curse.set_current_curse(2)
+	queue_free()
