@@ -37,7 +37,7 @@ func load_new_resource(value : Resource) -> void:
 
 func set_max_health(value : int) -> void:
 	max_health = value
-	self.health = min(health, max_health)
+	self.health = max(health, max_health)
 	emit_signal("max_health_changed", max_health)
 	
 
