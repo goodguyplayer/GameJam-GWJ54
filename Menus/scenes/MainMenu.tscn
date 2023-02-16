@@ -77,9 +77,9 @@ rect_min_size = Vector2( 200, 0 )
 alignment = 1
 
 [node name="Start Game" type="Button" parent="VBoxContainer/MenuOptions/VBoxContainer"]
-margin_top = 17.0
+margin_top = 5.0
 margin_right = 200.0
-margin_bottom = 37.0
+margin_bottom = 25.0
 focus_neighbour_left = NodePath("../Exit")
 focus_neighbour_top = NodePath("../Exit")
 focus_neighbour_right = NodePath("../Endless")
@@ -87,29 +87,39 @@ focus_neighbour_bottom = NodePath("../Endless")
 text = "Start Game"
 
 [node name="Endless" type="Button" parent="VBoxContainer/MenuOptions/VBoxContainer"]
-margin_top = 41.0
+margin_top = 29.0
 margin_right = 200.0
-margin_bottom = 61.0
+margin_bottom = 49.0
 focus_neighbour_left = NodePath("../Start Game")
+focus_neighbour_top = NodePath("../Start Game")
+focus_neighbour_right = NodePath("../Tutorial")
+focus_neighbour_bottom = NodePath("../Tutorial")
+text = "Endless"
+
+[node name="Tutorial" type="Button" parent="VBoxContainer/MenuOptions/VBoxContainer"]
+margin_top = 53.0
+margin_right = 200.0
+margin_bottom = 73.0
+focus_neighbour_left = NodePath("../Endless")
 focus_neighbour_top = NodePath("../Start Game")
 focus_neighbour_right = NodePath("../Options")
 focus_neighbour_bottom = NodePath("../Options")
-text = "Endless"
+text = "Tutorial"
 
 [node name="Options" type="Button" parent="VBoxContainer/MenuOptions/VBoxContainer"]
-margin_top = 65.0
+margin_top = 77.0
 margin_right = 200.0
-margin_bottom = 85.0
-focus_neighbour_left = NodePath("../Endless")
-focus_neighbour_top = NodePath("../Endless")
+margin_bottom = 97.0
+focus_neighbour_left = NodePath("../Tutorial")
+focus_neighbour_top = NodePath("../Tutorial")
 focus_neighbour_right = NodePath("../Credits")
 focus_neighbour_bottom = NodePath("../Credits")
 text = "Options"
 
 [node name="Credits" type="Button" parent="VBoxContainer/MenuOptions/VBoxContainer"]
-margin_top = 89.0
+margin_top = 101.0
 margin_right = 200.0
-margin_bottom = 109.0
+margin_bottom = 121.0
 focus_neighbour_left = NodePath("../Options")
 focus_neighbour_top = NodePath("../Options")
 focus_neighbour_right = NodePath("../Exit")
@@ -117,9 +127,9 @@ focus_neighbour_bottom = NodePath("../Exit")
 text = "Credits"
 
 [node name="Exit" type="Button" parent="VBoxContainer/MenuOptions/VBoxContainer"]
-margin_top = 113.0
+margin_top = 125.0
 margin_right = 200.0
-margin_bottom = 133.0
+margin_bottom = 145.0
 focus_neighbour_left = NodePath("../Credits")
 focus_neighbour_top = NodePath("../Credits")
 focus_neighbour_right = NodePath("../Start Game")
@@ -194,6 +204,7 @@ expand = true
 
 [connection signal="pressed" from="VBoxContainer/MenuOptions/VBoxContainer/Start Game" to="." method="_on_Start_Game_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuOptions/VBoxContainer/Endless" to="." method="_on_Endless_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuOptions/VBoxContainer/Tutorial" to="." method="_on_Tutorial_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuOptions/VBoxContainer/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuOptions/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuOptions/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
