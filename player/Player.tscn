@@ -763,7 +763,7 @@ shape = SubResource( 81 )
 
 [node name="PlayerStats" parent="." instance=ExtResource( 5 )]
 stats_resource = ExtResource( 9 )
-max_health = 5
+max_health = 3
 acceleration = 500
 max_speed = 150
 roll_speed = 200
