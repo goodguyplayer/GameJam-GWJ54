@@ -116,4 +116,6 @@ func _on_EnemyHurtbox_area_entered(area):
 
 func _on_EnemyStats_no_health():
 	Globalsignals.emit_signal("enemy_died")
+	Globalsignals.emit_signal("enemy_count_modified", -1)
+	
 	queue_free()

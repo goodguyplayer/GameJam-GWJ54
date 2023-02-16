@@ -13,13 +13,15 @@ var health_stat = 1 setget set_health_stat
 var health_max_stat = 1 setget set_health_max_stat
 var curse_text = "" setget set_curse_text
 var desc_text = "" setget set_desc_text
-var enemies_left = 1 setget set_enemies_left
+var enemies_left = 0 setget set_enemies_left
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Globalsignals.connect("health_changed", self, "set_health_stat")
 	Globalsignals.connect("max_health_changed", self, "set_health_max_stat")
 	Globalsignals.connect("curse_new", self, "set_curse_text")
+	Globalsignals.connect("curse_new_desc", self, "set_desc_text")
+	Globalsignals.connect("enemy_count_modified", self, "set_enemies_left")
 	var cursed = Curse.get_curse()
 	set_curse_text(cursed.CurseName)
 	set_desc_text(cursed.CurseDesc)
@@ -46,5 +48,5 @@ func set_desc_text(value : String) -> void:
 	
 
 func set_enemies_left(value : int) -> void:
-	enemies_left = value
-	enemies.text = str(value)
+	enemies_left += value
+	enemies.text = str(enemies_left) + " enemies left"
