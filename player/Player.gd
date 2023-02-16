@@ -182,6 +182,7 @@ func _on_Hurtbox_area_entered(area):
 			"Bullet":
 				player_stats.health -= area.damage
 
+
 func _on_TimerCanCurse_timeout():
 	can_curse = true
 

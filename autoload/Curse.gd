@@ -8,6 +8,7 @@ var curse_array = [
 ]
 
 var default_curse = preload("res://resources/curses/default_curse.tres")
+var final_curse = preload("res://resources/curses/default_curse.tres")
 var current_curse 
 
 
@@ -43,12 +44,35 @@ func load_default_curse() -> void:
 
 func get_curse():
 	return current_curse
+	
+
+func get_curse_array():
+	return curse_array
 
 
+func get_three_curses():
+	curse_array.shuffle()
+	return [curse_array[0], curse_array[1], curse_array[2]] # Please tell me I can just do curse_array[0:2]
+	
+	
+func get_final_curse():
+	return final_curse
 
-func pick_random_state(state_list):
-	state_list.shuffle()
-	return state_list.pop_front()
+
+func set_current_curse(value : int) -> void:
+	current_curse = curse_array.pop_at(value)
+	Globalsignals.emit_signal("curse_player_new", {
+			"stats" : current_curse.player_resource, 
+			"damage_melee" : current_curse.melee_resource, 
+			"damage_ranged" : current_curse.ranged_resource, 
+			"effect" : current_curse.effect_resource
+		})
+	Globalsignals.emit_signal("curse_new", current_curse.CurseName)
+
+
+func pick_random_state(list):
+	list.shuffle()
+	return list.pop_front()
 	
 
 func obtain_curse_enemy_ranged() -> Dictionary:
