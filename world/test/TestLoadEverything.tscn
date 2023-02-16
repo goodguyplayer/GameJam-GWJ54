@@ -1,11 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://world/test/TestWorld.gd" type="Script" id=1]
+[ext_resource path="res://world/test/TestLoadEverything.gd" type="Script" id=1]
 [ext_resource path="res://world/test/floortempTilemap.png" type="Texture" id=2]
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://enemy/scenes/EnemyTemplate.tscn" type="PackedScene" id=4]
-[ext_resource path="res://enemy/scenes/EnemyRanged.tscn" type="PackedScene" id=5]
-[ext_resource path="res://world/scenes/Camera.tscn" type="PackedScene" id=6]
+[ext_resource path="res://world/scenes/Camera.tscn" type="PackedScene" id=3]
 
 [sub_resource type="TileSet" id=1]
 0/name = "floortempTilemap.png 0"
@@ -44,18 +41,21 @@ tile_data = PoolIntArray( 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65543, 0, 0, 65
 wait_time = 0.5
 one_shot = true
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 56, 64 )
+[node name="PlayerSpawn" type="Position2D" parent="."]
+position = Vector2( 112, 208 )
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../Camera2D")
+[node name="EnemySpawn" type="Position2D" parent="."]
+position = Vector2( 368, 272 )
 
-[node name="EnemyTemplate" parent="." instance=ExtResource( 4 )]
-position = Vector2( 160, 224 )
+[node name="EnemySpawn2" type="Position2D" parent="."]
+position = Vector2( 392, 80 )
 
-[node name="EnemyRanged" parent="." instance=ExtResource( 5 )]
-position = Vector2( 384, 48 )
+[node name="Button" type="Button" parent="."]
+margin_right = 136.0
+margin_bottom = 32.0
+text = "Load"
 
-[node name="Camera2D" parent="." instance=ExtResource( 6 )]
+[node name="Camera2D" parent="." instance=ExtResource( 3 )]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

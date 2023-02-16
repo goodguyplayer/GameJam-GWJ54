@@ -2,9 +2,9 @@ extends Node2D
 
 onready var player = $Player
 
-var default = preload("res://resources/stats/stats_player_default.tres")
-var fast = preload("res://resources/stats/stats_player_fast.tres")
-var slow = preload("res://resources/stats/stats_player_slow.tres")
+var default = preload("res://resources/stats/player/stats_player_default.tres")
+var fast = preload("res://resources/stats/player/stats_player_haste.tres")
+var slow = preload("res://resources/stats/player/stats_player_snail.tres")
 
 func _ready():
 	print(default.max_health)
