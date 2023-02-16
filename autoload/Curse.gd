@@ -4,11 +4,12 @@ var curse_array = [
 	preload("res://resources/curses/haste_curse.tres"),
 	preload("res://resources/curses/slow_curse.tres"),
 	preload("res://resources/curses/curse_of_giantism.tres"),
+	
 #	preload(),
 ]
 
 var default_curse = preload("res://resources/curses/default_curse.tres")
-var final_curse = preload("res://resources/curses/default_curse.tres")
+var final_curse = preload("res://resources/curses/final_curse.tres")
 var current_curse 
 
 
