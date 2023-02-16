@@ -82,6 +82,18 @@ func set_current_curse(value : int) -> void:
 		})
 	Globalsignals.emit_signal("curse_new", current_curse.CurseName)
 	Globalsignals.emit_signal("curse_new_desc", current_curse.CurseDesc)
+	
+
+func set_final_curse() -> void:
+	current_curse = final_curse
+	Globalsignals.emit_signal("curse_player_new", {
+			"stats" : current_curse.player_resource, 
+			"damage_melee" : current_curse.melee_resource, 
+			"damage_ranged" : current_curse.ranged_resource, 
+			"effect" : current_curse.effect_resource
+		})
+	Globalsignals.emit_signal("curse_new", current_curse.CurseName)
+	Globalsignals.emit_signal("curse_new_desc", current_curse.CurseDesc)
 
 
 func pick_random_state(list):

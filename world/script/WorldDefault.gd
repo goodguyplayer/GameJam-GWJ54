@@ -16,6 +16,7 @@ var enemy_counter = 0
 var enemy_spawned_counter = 0
 var round_counter = 0
 var check_enemy_amount = false
+var final_curse_test = false
 
 onready var test_floor = $Floor
 onready var timer_floor = $Timer
@@ -32,6 +33,7 @@ onready var canvas_layer = $CanvasLayer
 
 func _ready():
 	Globalsignals.connect("enemy_died", self, "_enemy_counter_update_enemydied")
+	Globalsignals.connect("curse_final_curse", self, "_enemy_counter_update_enemydied")
 	for cellpos in test_floor.get_used_cells():
 		var cell = test_floor.get_cellv(cellpos)
 		if cell == 0:
@@ -51,8 +53,11 @@ func _ready():
 func _process(delta):
 	if check_enemy_amount:
 		if (enemy_spawned_counter == round_counter * 5) and (enemy_counter <= 0):
-			check_enemy_amount = false
-			next_round()
+			if final_curse_test:
+				pass
+			else:
+				check_enemy_amount = false
+				next_round()
 	
 	
 	
@@ -110,3 +115,7 @@ func _on_TimerEnemy_timeout():
 
 func _enemy_counter_update_enemydied():
 	enemy_counter -= 1
+	
+
+func _final_curse():
+	final_curse_test = true
