@@ -56,6 +56,16 @@ func get_three_curses():
 	curse_array.shuffle()
 	return [curse_array[0], curse_array[1], curse_array[2]] # Please tell me I can just do curse_array[0:2]
 	
+
+func get_two_curses():
+	curse_array.shuffle()
+	return [curse_array[0], curse_array[1]] # Please tell me there's a better way
+
+
+func get_one_curses():
+	curse_array.shuffle()
+	return [curse_array[0]] # Please, for the love of everything holy, tell me there's a better way
+	
 	
 func get_final_curse():
 	return final_curse

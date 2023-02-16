@@ -21,8 +21,8 @@ func _ready():
 
 func load_new_curse() -> void:
 	get_tree().paused = true
-	print(get_tree())
-	if Curse.get_curse_array().size() >= 3:
+	var curses_left = Curse.get_curse_array().size()
+	if curses_left >= 3:
 		var three_curses = Curse.get_three_curses()
 		update_container(curse_1, three_curses[0])
 		update_container(curse_2, three_curses[1])
@@ -32,9 +32,23 @@ func load_new_curse() -> void:
 		curse_set_2 = three_curses[1]
 		curse_set_3 = three_curses[2]
 		
+	elif curses_left == 2:
+		var two_curses = Curse.get_two_curses()
+		update_container(curse_1, two_curses[0])
+		update_container(curse_2, two_curses[1])
+		curse_3.visible = false
+	
+	elif curses_left == 1:
+		var last_curses = Curse.get_one_curses()
+		update_container(curse_1, last_curses[0])
+		curse_3.visible = false
+		curse_2.visible = false
+		
 	else:
-		print("Sorry jimbo")
-
+		var final_curse = Curse.get_final_curse()
+		update_container(curse_1, final_curse)
+		curse_3.visible = false
+		curse_2.visible = false
 
 func update_container(container, curse):
 	var image = container.get_node("Image")
