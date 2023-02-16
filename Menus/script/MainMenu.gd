@@ -8,7 +8,7 @@ onready var build_version = $VBoxContainer/TitleScreen/BuildVersion
 func _ready():
 	$"VBoxContainer/MenuOptions/VBoxContainer/Start Game".grab_focus()
 	if OS.has_feature("debug"):
-		build_version.text = "Oh hi mark"
+		build_version.text = "Debug mode activated"
 	elif OS.has_feature("release"):
 		if OS.has_feature("Windows"):
 			build_version.text = "Build Version - Windows"
