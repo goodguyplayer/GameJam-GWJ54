@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://world/test/floortempTilemap.png" type="Texture" id=1]
 [ext_resource path="res://world/script/WorldDefault.gd" type="Script" id=2]
 [ext_resource path="res://world/scenes/Camera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/UI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://world/scenes/EnemySpawned.gd" type="Script" id=5]
 
 [sub_resource type="TileSet" id=1]
 0/name = "floortempTilemap.png 0"
@@ -36,13 +37,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="PlayerSpawn" type="Position2D" parent="."]
-position = Vector2( 112, 104 )
-
-[node name="EnemySpawn" type="Position2D" parent="."]
-position = Vector2( 272, 152 )
-
-[node name="EnemySpawn2" type="Position2D" parent="."]
-position = Vector2( 544, 144 )
+position = Vector2( 384, 384 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
 
@@ -51,9 +46,64 @@ layer = 2
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource( 4 )]
 anchor_bottom = 0.0
-margin_left = 8.0
 margin_top = 560.0
-margin_right = -8.0
+margin_right = -16.0
 margin_bottom = 600.0
 
+[node name="TimerEnemy" type="Timer" parent="."]
+
+[node name="EnemySpawners" type="Node2D" parent="."]
+
+[node name="EnemySpawn" type="Position2D" parent="EnemySpawners"]
+position = Vector2( 256, 192 )
+
+[node name="EnemySpawn2" type="Position2D" parent="EnemySpawners"]
+position = Vector2( 512, 192 )
+
+[node name="EnemySpawn3" type="Position2D" parent="EnemySpawners"]
+position = Vector2( 384, 192 )
+
+[node name="EnemySpawn4" type="Position2D" parent="EnemySpawners"]
+position = Vector2( 192, 256 )
+
+[node name="EnemySpawn5" type="Position2D" parent="EnemySpawners"]
+position = Vector2( 192, 384 )
+
+[node name="EnemySpawn6" type="Position2D" parent="EnemySpawners"]
+position = Vector2( 192, 512 )
+
+[node name="EnemySpawn7" type="Position2D" parent="EnemySpawners"]
+position = Vector2( 576, 256 )
+
+[node name="EnemySpawn8" type="Position2D" parent="EnemySpawners"]
+position = Vector2( 576, 384 )
+
+[node name="EnemySpawn13" type="Position2D" parent="EnemySpawners"]
+position = Vector2( 640, 384 )
+
+[node name="EnemySpawn14" type="Position2D" parent="EnemySpawners"]
+position = Vector2( 384, 640 )
+
+[node name="EnemySpawn15" type="Position2D" parent="EnemySpawners"]
+position = Vector2( 128, 384 )
+
+[node name="EnemySpawn16" type="Position2D" parent="EnemySpawners"]
+position = Vector2( 384, 128 )
+
+[node name="EnemySpawn9" type="Position2D" parent="EnemySpawners"]
+position = Vector2( 576, 512 )
+
+[node name="EnemySpawn10" type="Position2D" parent="EnemySpawners"]
+position = Vector2( 256, 576 )
+
+[node name="EnemySpawn11" type="Position2D" parent="EnemySpawners"]
+position = Vector2( 384, 576 )
+
+[node name="EnemySpawn12" type="Position2D" parent="EnemySpawners"]
+position = Vector2( 512, 576 )
+
+[node name="EnemySpawned" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="TimerEnemy" to="." method="_on_TimerEnemy_timeout"]
