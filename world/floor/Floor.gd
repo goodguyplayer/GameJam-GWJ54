@@ -7,7 +7,7 @@ export var collision_status = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	collision_status = collision_shape_2d.disabled 
 
 
 func change_collision_swap():

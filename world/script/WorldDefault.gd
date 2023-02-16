@@ -83,14 +83,16 @@ func _on_Timer_timeout():
 		for i in tile_list:
 			var random_numbered = rng.randi_range(0,1)
 			tile_list.shuffle()
-			if not tile_list[0].collision_status:
+			if tile_list[0].collision_status:
 				if random_numbered == 0:
 					tile_list[0].change_collision(false)
+					tile_list_disabled.append(tile_list[0])
 					timer_floor.start(timer_time_to_disperse)
 					break
 	else:
 		for i in tile_list:
 			i.change_collision(true)
+		tile_list_disabled = []
 		timer_floor.start(timer_time_to_disperse)
 
 
