@@ -22,6 +22,7 @@ var roll_vector = Vector2.DOWN
 var can_fire = true
 var can_curse = true
 var bullet = preload("res://projectiles/bullet/PlayerBullet.tscn")
+var invincibility_timer = 0.6
 
 onready var animation_player = $AnimationPlayer
 onready var animation_tree = $AnimationTree
@@ -32,6 +33,7 @@ onready var player_stats = $PlayerStats
 onready var melee_hitbox = $MeleeHitboxPivot/MeleeHitbox
 onready var ranged_cursed_assistant = $RangedCursedAssistant
 onready var remote_transform_2d = $RemoteTransform2D
+onready var hurtbox = $Hurtbox
 
 
 # Called when the node enters the scene tree for the first time.
@@ -180,9 +182,13 @@ func _on_Hurtbox_area_entered(area):
 		match area.hitbox_name:
 			"Melee":
 				player_stats.health -= area.damage
+				hurtbox.start_invincibility(invincibility_timer)
+				hurtbox.create_hit_effect()
 		
 			"Bullet":
 				player_stats.health -= area.damage
+				hurtbox.start_invincibility(invincibility_timer)
+				hurtbox.create_hit_effect()
 
 
 func _on_TimerCanCurse_timeout():

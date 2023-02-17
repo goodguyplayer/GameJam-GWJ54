@@ -14,6 +14,7 @@ var velocity = Vector2.ZERO
 var wander_target_range = 4
 var can_attack = true
 var is_cursed = false
+var invincibility_timer = 0.4
 
 var bullet = preload("res://projectiles/bullet/EnemyBullet.tscn")
 
@@ -116,9 +117,13 @@ func _on_EnemyHurtbox_area_entered(area):
 			"Melee":
 				if is_cursed:
 					enemy_stats.health -= area.damage
+					enemy_hurtbox.start_invincibility(invincibility_timer)
+					enemy_hurtbox.create_hit_effect()
 			"Bullet":
 				if is_cursed:
 					enemy_stats.health -= area.damage
+					enemy_hurtbox.start_invincibility(invincibility_timer)
+					enemy_hurtbox.create_hit_effect()
 			"Curse":
 				if not is_cursed:
 					enemy_cursed()
