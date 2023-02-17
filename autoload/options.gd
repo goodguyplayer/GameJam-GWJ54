@@ -42,7 +42,7 @@ func _ready():
 			if file.get_len() > 0:
 				load_file()
 			else:
-				print("Corrupted / Failed")
+				reset_default()
 	else:
 		save_options(default_config)
 
@@ -82,6 +82,11 @@ func save_options(option_dict : Dictionary) -> void:
 	if error == OK:
 		file.store_var(option_dict )
 		file.close()
+
+
+func reset_default() -> void:
+	save_options(default_config)
+	load_file()
 
 
 func set_music_volume(value : float) -> void:
