@@ -225,6 +225,15 @@ margin_right = 125.0
 margin_bottom = 90.0
 text = "Select"
 
+[node name="Label" type="Label" parent="."]
+margin_left = 408.0
+margin_top = 104.0
+margin_right = 616.0
+margin_bottom = 136.0
+text = "CHOOSE A NEW CURSE"
+align = 1
+valign = 1
+
 [connection signal="pressed" from="HBoxContainer/MarginContainer/Curse1/MarginContainer/HBoxContainer/Curse1Button" to="." method="_on_Curse1Button_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer2/Curse2/MarginContainer/HBoxContainer/Curse2Button" to="." method="_on_Curse2Button_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer3/Curse3/MarginContainer/HBoxContainer/Curse3Button" to="." method="_on_Curse3Button_pressed"]
