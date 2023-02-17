@@ -1,13 +1,13 @@
 extends Node
 
-var curse_array = [
+var original_curse_array = [
 	preload("res://resources/curses/haste_curse.tres"),
 	preload("res://resources/curses/slow_curse.tres"),
 	preload("res://resources/curses/curse_of_giantism.tres"),
 	
 #	preload(),
 ]
-
+var curse_array = []
 var default_curse = preload("res://resources/curses/default_curse.tres")
 var final_curse = preload("res://resources/curses/final_curse.tres")
 var current_curse 
@@ -15,8 +15,13 @@ var current_curse
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	reset_curse_array()
 	current_curse = default_curse
 	
+func reset_curse_array():
+	curse_array = []
+	for i in original_curse_array:
+		curse_array.append(i)
 
 
 func change_curse() -> void:

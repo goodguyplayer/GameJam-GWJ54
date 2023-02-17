@@ -35,6 +35,7 @@ onready var canvas_layer = $CanvasLayer
 
 
 func _ready():
+	Curse.reset_curse_array()
 	Globalsignals.connect("enemy_died", self, "_enemy_counter_update_enemydied")
 	Globalsignals.connect("curse_final_curse", self, "_final_curse")
 	for cellpos in test_floor.get_used_cells():
