@@ -107,13 +107,13 @@ func _on_EnemyHurtbox_area_entered(area):
 			"Melee":
 				if is_cursed:
 					enemy_stats.health -= area.damage
-					enemy_hurtbox.start_invincibility(invincibility_timer)
-					enemy_hurtbox.create_hit_effect()
+#					enemy_hurtbox.start_invincibility(invincibility_timer)
+#					enemy_hurtbox.create_hit_effect()
 			"Bullet":
 				if is_cursed:
 					enemy_stats.health -= area.damage
-					enemy_hurtbox.start_invincibility(invincibility_timer)
-					enemy_hurtbox.create_hit_effect()
+#					enemy_hurtbox.start_invincibility(invincibility_timer)
+#					enemy_hurtbox.create_hit_effect()
 			"Curse":
 				if not is_cursed:
 					enemy_cursed()
