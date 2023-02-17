@@ -29,11 +29,15 @@ export var data : Resource
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_tree().paused = true
 	hide_textbox()
 	if data != null:
 		load_resource(data)
 	else:
 		print("Nothing to load beans")
+		get_tree().paused = false
+		queue_free()
+		
 	
 
 func _process(delta):
@@ -52,6 +56,7 @@ func _process(delta):
 				change_state(State.READY)
 				if len(text_queue) == 0:
 					Globalsignals.emit_signal("textbox_end", title)
+					get_tree().paused = false
 					queue_free()
 
 

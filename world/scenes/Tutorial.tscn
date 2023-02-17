@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://world/scenes/Story.gd" type="Script" id=1]
+
+[node name="Tutorial" type="Node2D"]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Story" type="CanvasLayer" parent="."]
+pause_mode = 2
+script = ExtResource( 1 )
