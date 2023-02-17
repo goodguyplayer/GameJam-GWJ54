@@ -5,7 +5,10 @@ var floor_tile = preload("res://world/floor/Floor.tscn")
 var curse_options = preload("res://UI/CurseOptions.tscn")
 var enemy_ranged = preload("res://enemy/scenes/EnemyRanged.tscn")
 var enemy_melee = preload("res://enemy/scenes/EnemyMelee.tscn")
+var ui_win = preload("res://UI/WinScreen.tscn")
+
 var enemy_list = [enemy_ranged, enemy_melee]
+var player_reference
 var tile_list = []
 var tile_list_disabled = []
 var rng = RandomNumberGenerator.new()
@@ -33,7 +36,7 @@ onready var canvas_layer = $CanvasLayer
 
 func _ready():
 	Globalsignals.connect("enemy_died", self, "_enemy_counter_update_enemydied")
-	Globalsignals.connect("curse_final_curse", self, "_enemy_counter_update_enemydied")
+	Globalsignals.connect("curse_final_curse", self, "_final_curse")
 	for cellpos in test_floor.get_used_cells():
 		var cell = test_floor.get_cellv(cellpos)
 		if cell == 0:
@@ -46,7 +49,7 @@ func _ready():
 	for _i in enemy_spawners.get_children ():
 		enemy_spawner_list.append(_i)
 	
-	spawn_object(player, player_spawn)
+	player_reference = spawn_object(player, player_spawn)
 	next_round()
 	
 
@@ -54,7 +57,8 @@ func _process(delta):
 	if check_enemy_amount:
 		if (enemy_spawned_counter == round_counter * 5) and (enemy_counter <= 0):
 			if final_curse_test:
-				pass
+				var object_instance = ui_win.instance()
+				canvas_layer.call_deferred("add_child", object_instance)
 			else:
 				check_enemy_amount = false
 				next_round()
@@ -64,7 +68,7 @@ func _process(delta):
 func spawn_object(object, position):
 	var object_instance = object.instance()
 	object_instance.position = position.get_global_position()
-	get_tree().get_root().call_deferred("add_child", object_instance)
+	self.call_deferred("add_child", object_instance)
 	return object_instance
 	
 

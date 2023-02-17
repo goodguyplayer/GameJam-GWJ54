@@ -94,6 +94,7 @@ func set_final_curse() -> void:
 		})
 	Globalsignals.emit_signal("curse_new", current_curse.CurseName)
 	Globalsignals.emit_signal("curse_new_desc", current_curse.CurseDesc)
+	Globalsignals.emit_signal("curse_final_curse")
 
 
 func pick_random_state(list):
