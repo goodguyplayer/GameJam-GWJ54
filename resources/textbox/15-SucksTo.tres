@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://autoload/TextboxData.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+SpeakerTextureLeft = "res://icon.png"
+SpeakerTextureRight = "res://icon.png"
+title = "SucksTo"
+SpeakerLeftVisibility = true
+SpeakerRightVisibility = false
+text_queue = [ "Sucks to be you, asked for immortality but didn't care about the soul. ", "Your body is still up there, living an eternal life." ]
