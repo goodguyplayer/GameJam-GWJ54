@@ -27,8 +27,8 @@ func _ready():
 
 
 func _on_TryAgain_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://world/scenes/WorldDefault.tscn")
 
 
 func _on_ReturnMenu_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://Menus/scenes/MainMenu.tscn")
