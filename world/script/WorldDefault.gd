@@ -6,6 +6,7 @@ var curse_options = preload("res://UI/CurseOptions.tscn")
 var enemy_ranged = preload("res://enemy/scenes/EnemyRanged.tscn")
 var enemy_melee = preload("res://enemy/scenes/EnemyMelee.tscn")
 var ui_win = preload("res://UI/WinScreen.tscn")
+var ui_gameover = preload("res://UI/GameOver.tscn")
 
 var enemy_list = [enemy_ranged, enemy_melee]
 var player_reference
@@ -38,6 +39,7 @@ func _ready():
 	Curse.reset_curse_array()
 	Globalsignals.connect("enemy_died", self, "_enemy_counter_update_enemydied")
 	Globalsignals.connect("curse_final_curse", self, "_final_curse")
+	Globalsignals.connect("player_died", self, "_game_over")
 	for cellpos in test_floor.get_used_cells():
 		var cell = test_floor.get_cellv(cellpos)
 		if cell == 0:
@@ -124,3 +126,8 @@ func _enemy_counter_update_enemydied():
 
 func _final_curse():
 	final_curse_test = true
+
+
+func _game_over():
+	var object_instance = ui_gameover.instance()
+	canvas_layer.call_deferred("add_child", object_instance)

@@ -2,6 +2,7 @@ extends Node
 
 
 signal player_entered_hole()
+signal player_died()
 signal enemy_entered_hole()
 signal enemy_died()
 signal enemy_count_modified(value)
