@@ -25,22 +25,18 @@ var text_queue = []
 
 
 export var title = ""
-
+export var data : Resource
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hide_textbox()
-	queue_text("Welcome to the system. I will be your guide for the world within.")
-	queue_text("The world within, a virtual world, has been infected by a virus. It is our job to stop the infection.")
-	queue_text("To access the world within, users like you and I require special suits. Thus, before every mission, you'll be granted the opportunity to set your suit.")
-	queue_text("For training purposes, I will send you to a practice world. The practice world won't kill you, so feel free to return whenever and test new pieces.")
-	queue_text("However, keep in mind that we use the world within to communicate, therefore the virus may be listening to our conversations and watching every move.")
+	if data != null:
+		load_resource(data)
+	else:
+		print("Nothing to load beans")
 	
 
 func _process(delta):
-	if len(text_queue) == 0:
-		Globalsignals.emit_signal("textbox_end", title)
-		queue_free()
 	match current_state:
 		State.READY:
 			if !text_queue.empty():
@@ -54,6 +50,18 @@ func _process(delta):
 		State.FINISHED:
 			if Input.is_action_just_pressed("ui_textbutton"):
 				change_state(State.READY)
+				if len(text_queue) == 0:
+					Globalsignals.emit_signal("textbox_end", title)
+					queue_free()
+
+
+func load_resource(data : Resource) -> void:
+	texture_left.texture = load(data.SpeakerTextureLeft)
+	texture_right.texture = load(data.SpeakerTextureRight)
+	title = data.title
+	texture_left.visible = data.SpeakerLeftVisibility
+	texture_right.visible = data.SpeakerRightVisibility
+	text_queue = data.text_queue
 
 
 func queue_text(next_text):

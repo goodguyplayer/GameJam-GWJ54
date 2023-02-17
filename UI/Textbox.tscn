@@ -1,18 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/Textbox.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0, 0, 0, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+[ext_resource path="res://UI/TextboxTextures/DefaultStyleBox.tres" type="StyleBox" id=3]
+[ext_resource path="res://resources/textbox/textboxTest.tres" type="Resource" id=4]
 
 [node name="Textbox" type="CanvasLayer"]
 pause_mode = 2
 script = ExtResource( 1 )
+data = ExtResource( 4 )
 
 [node name="TextureLeft" type="TextureRect" parent="."]
 margin_left = 64.0
@@ -44,7 +40,7 @@ margin_bottom = -64.0
 [node name="Panel" type="Panel" parent="TextBoxContainer"]
 margin_right = 944.0
 margin_bottom = 136.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = ExtResource( 3 )
 
 [node name="MarginContainer" type="MarginContainer" parent="TextBoxContainer/Panel"]
 anchor_right = 1.0
