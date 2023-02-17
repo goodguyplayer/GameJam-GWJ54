@@ -33,13 +33,19 @@ _global_script_classes=[ {
 "class": "StatsResource",
 "language": "GDScript",
 "path": "res://autoload/stats_resource.gd"
+}, {
+"base": "Resource",
+"class": "TextboxData",
+"language": "GDScript",
+"path": "res://autoload/TextboxData.gd"
 } ]
 _global_script_class_icons={
 "CurseEffect": "",
 "CursedEffect": "",
 "MeleeStats": "",
 "RangedStats": "",
-"StatsResource": ""
+"StatsResource": "",
+"TextboxData": ""
 }
 
 [application]
