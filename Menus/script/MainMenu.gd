@@ -29,7 +29,8 @@ func _on_Endless_pressed():
 
 
 func _on_Options_pressed():
-	pass # Replace with function body.
+	var options = load("res://Menus/scenes/Options.tscn").instance()
+	get_tree().current_scene.add_child(options)
 
 
 func _on_Credits_pressed():
