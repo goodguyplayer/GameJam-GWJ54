@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://world/scenes/Story.gd" type="Script" id=1]
 [ext_resource path="res://world/scenes/Tutorial.gd" type="Script" id=2]
 [ext_resource path="res://world/test/floortempTilemap.png" type="Texture" id=3]
+[ext_resource path="res://world/scenes/TutorialWorld.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="TileSet" id=2]
 0/name = "floortempTilemap.png 0"
@@ -41,6 +45,19 @@ bg_color = Color( 0.52549, 0.00392157, 0.0666667, 1 )
 script = ExtResource( 2 )
 
 [node name="World" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="Panel" type="Panel" parent="World"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -4.0
+margin_top = -7.0
+margin_right = 1033.0
+margin_bottom = 612.0
+rect_min_size = Vector2( 200, 200 )
+custom_styles/panel = SubResource( 3 )
 
 [node name="Floor" type="TileMap" parent="World"]
 pause_mode = 1
@@ -52,6 +69,12 @@ tile_data = PoolIntArray( 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0
 [node name="PlayerSpawn" type="Position2D" parent="World"]
 position = Vector2( 472, 288 )
 
+[node name="EnemySpawnMelee" type="Position2D" parent="World"]
+position = Vector2( 320, 288 )
+
+[node name="EnemySpawnRanged" type="Position2D" parent="World"]
+position = Vector2( 640, 288 )
+
 [node name="Story" type="CanvasLayer" parent="."]
 pause_mode = 2
 script = ExtResource( 1 )
@@ -61,4 +84,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/panel = SubResource( 1 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 512, 300 )
+current = true
+
+[connection signal="do_the_dirty_to_player" from="Story" to="World" method="_on_Story_do_the_dirty_to_player"]
 [connection signal="first_part_plot_done" from="Story" to="." method="_on_Story_first_part_plot_done"]
+[connection signal="summon_to_practice" from="Story" to="." method="_on_Story_summon_to_practice"]

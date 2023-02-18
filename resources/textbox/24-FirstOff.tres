@@ -6,7 +6,7 @@
 script = ExtResource( 1 )
 SpeakerTextureLeft = "res://icon.png"
 SpeakerTextureRight = "res://icon.png"
-title = "IsThereA"
-SpeakerLeftVisibility = false
-SpeakerRightVisibility = true
-text_queue = [ "Is there a way out?", "I'll do anything! Anything to leave!" ]
+title = "FirstOff"
+SpeakerLeftVisibility = true
+SpeakerRightVisibility = false
+text_queue = [ "First off, you'll be fighting demons!", "Don't worry, you can burn them at a close or long range. Just check your settings for your buttons!" ]

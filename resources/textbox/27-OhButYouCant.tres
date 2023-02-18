@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://autoload/TextboxData.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+SpeakerTextureLeft = "res://icon.png"
+SpeakerTextureRight = "res://icon.png"
+title = "OhButYouCant"
+SpeakerLeftVisibility = true
+SpeakerRightVisibility = false
+text_queue = [ "Oh but you can't just burn them! That won't work!", "You have to curse them! Give them a curse and then they can be killed!", "Lucky you, you have a million of curses within your soul.", "Share the love, shoot them with curses and then attack!" ]
