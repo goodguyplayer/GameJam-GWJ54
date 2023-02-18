@@ -5,6 +5,8 @@ onready var story = $"."
 
 var current
 
+signal first_part_plot_done
+
 var textbox_data = [
 	preload("res://resources/textbox/1-FireyIntro.tres"),
 	preload("res://resources/textbox/2-SatinIntro.tres"),
@@ -39,5 +41,10 @@ func load_textbox():
 
 
 func _update_next_textbox(value):
-	if textbox_data.size() >= 0:
-		load_textbox()
+	if value == "SatinThatsWhat":
+		get_tree().paused = false
+		emit_signal("first_part_plot_done")
+		self.visible = false
+	else:
+		if textbox_data.size() >= 0:
+			load_textbox()
