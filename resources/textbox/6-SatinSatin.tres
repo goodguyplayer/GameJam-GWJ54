@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-SpeakerTextureLeft = "res://icon.png"
+SpeakerTextureLeft = "res://resources/story_sprites/satin-2.png"
 SpeakerTextureRight = "res://icon.png"
 title = "Satin"
 SpeakerLeftVisibility = true

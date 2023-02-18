@@ -47,11 +47,20 @@ var textbox_data = [
 	preload("res://resources/textbox/35-EhBound.tres")
 ]
 
+var player_died_early = [
+	preload("res://resources/textbox/35-EhBound.tres")
+]
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Globalsignals.connect("textbox_end", self, "_update_next_textbox")
-	Globalsignals.connect("player_died", self, "load_textbox")
+	Globalsignals.connect("player_died", self, "player_died_early_story_fix")
+	load_textbox()
+
+
+func player_died_early_story_fix():
+	textbox_data = player_died_early
 	load_textbox()
 
 

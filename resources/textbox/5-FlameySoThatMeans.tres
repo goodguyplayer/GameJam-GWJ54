@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 SpeakerTextureLeft = "res://icon.png"
-SpeakerTextureRight = "res://icon.png"
+SpeakerTextureRight = "res://resources/story_sprites/fire-skull-Modified-2.png"
 title = "SoThatMeans"
 SpeakerLeftVisibility = false
 SpeakerRightVisibility = true
