@@ -19,6 +19,7 @@ func _ready():
 	current_curse = default_curse
 	
 func reset_curse_array():
+	randomize()
 	curse_array = []
 	for i in original_curse_array:
 		curse_array.append(i)
