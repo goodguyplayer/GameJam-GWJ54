@@ -25,7 +25,7 @@ func _on_Start_Game_pressed():
 
 
 func _on_Endless_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://world/scenes/WorldEndless.tscn")
 
 
 func _on_Options_pressed():
@@ -42,4 +42,4 @@ func _on_Exit_pressed():
 
 
 func _on_Tutorial_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://world/scenes/Tutorial.tscn")
