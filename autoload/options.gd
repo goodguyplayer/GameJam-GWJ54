@@ -14,15 +14,16 @@ export var default_config : Dictionary = {
 		"audio_value" : 1,
 		"music_enabled" : true,
 		"audio_enabled" : true,
-		"ui_up" : 16777232,
-		"ui_left" : 16777231,
-		"ui_right" : 16777233,
-		"ui_down" : 16777234,
+		"ui_up" : 87,
+		"ui_left" : 65,
+		"ui_right" : 68,
+		"ui_down" : 83,
 		"ui_dodge" : 16777237,
 		"ui_curse" : 81,
 		"ui_attack_melee" : 69,
 		"ui_attack_ranged" : 82,
 		"ui_pause" : 80,
+		"ui_textbutton" : 16777221,
 	}
 
 
@@ -66,6 +67,7 @@ func load_file() -> void:
 			load_inputs("ui_attack_melee", options_data)
 			load_inputs("ui_attack_ranged", options_data)
 			load_inputs("ui_pause", options_data)
+			load_inputs("ui_textbutton", options_data)
 			file.close()
 
 

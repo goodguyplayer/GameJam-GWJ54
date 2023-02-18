@@ -334,10 +334,32 @@ margin_left = 42.0
 margin_right = 54.0
 action = "ui_pause"
 
-[node name="HBoxContainer13" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer14" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_top = 332.0
 margin_right = 1008.0
 margin_bottom = 352.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer14"]
+margin_left = 451.0
+margin_right = 557.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer14/HBoxContainer"]
+margin_top = 3.0
+margin_right = 90.0
+margin_bottom = 17.0
+text = "Text read/skip"
+
+[node name="ActionRemapButton" parent="MarginContainer/VBoxContainer/HBoxContainer14/HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 94.0
+margin_right = 106.0
+action = "ui_textbutton"
+
+[node name="HBoxContainer13" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 356.0
+margin_right = 1008.0
+margin_bottom = 376.0
 alignment = 1
 
 [node name="Save" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer13"]
