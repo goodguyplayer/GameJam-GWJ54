@@ -13,6 +13,7 @@ enum {
 	WEAPON_ATTACK,
 	MELEE_ATTACK,
 	CURSE,
+	DEATH,
 }
 
 var state = MOVE
@@ -63,10 +64,14 @@ func _physics_process(delta):
 			
 		CURSE:
 			curse_state()
+			
+		DEATH:
+			pass
 	
 	
 func move_state(delta) -> void:
 	var input_vector = Vector2.ZERO
+	var visual_vector = ranged_cursed_assistant.position
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	input_vector = input_vector.normalized()
@@ -148,6 +153,7 @@ func curse_animation_finished():
 
 func player_entered_floor_hole():
 	animation_player.play("death_fall")
+	state = DEATH
 
 
 func _load_curse_effect(resource : Dictionary):
@@ -168,6 +174,7 @@ func _on_TimerCanFire_timeout():
 
 func _on_PlayerStats_no_health():
 	animation_player.play("death_default")
+	state = DEATH
 	
 
 func _player_died_post_animation():
