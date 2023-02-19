@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://projectiles/bullet/Bullet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://projectiles/bullet/script/PlayerBullet.gd" type="Script" id=2]
+[ext_resource path="res://resources/assets/Audio/Noise_Attack.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.09902
@@ -13,7 +14,6 @@ script = ExtResource( 2 )
 position = Vector2( 0, 0 )
 scale = Vector2( 0.296296, 0.228571 )
 animation = "curse_bullet"
-frame = 2
 flip_h = true
 
 [node name="CollisionShape2D" parent="." index="1"]
@@ -28,6 +28,9 @@ hitbox_name = "Curse"
 [node name="CollisionShape2D" parent="BulletHitbox" index="0"]
 position = Vector2( 0, 0 )
 rotation = 1.5708
+
+[node name="AudioStreamPlayer2D" parent="." index="3"]
+stream = ExtResource( 3 )
 
 [connection signal="body_entered" from="BulletHitbox" to="." method="_on_BulletHitbox_body_entered"]
 

@@ -30,6 +30,7 @@ func get_current_options() -> Dictionary:
 		"ui_attack_melee" : InputMap.get_action_list("ui_attack_melee")[0].scancode,
 		"ui_attack_ranged" : InputMap.get_action_list("ui_attack_ranged")[0].scancode,
 		"ui_pause" : InputMap.get_action_list("ui_pause")[0].scancode,
+		"ui_textbutton" : InputMap.get_action_list("ui_textbutton")[0].scancode,
 	}
 	
 	return options_set

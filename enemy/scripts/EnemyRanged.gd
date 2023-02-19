@@ -25,6 +25,8 @@ onready var enemy_stats = $EnemyStats
 onready var wander_timer = $WanderTimer
 onready var vector_assistant = $VectorAssistant
 onready var timer_can_attack = $TimerCanAttack
+onready var cursed_symbol = $CursedSymbol
+onready var hit_sound = $Hit
 
 
 
@@ -99,6 +101,7 @@ func enemy_cursed():
 	var cursed = Curse.obtain_curse_enemy_ranged()
 	is_cursed = true
 	vector_assistant.is_cursed = true
+	
 #	bullet.load_new_stats(cursed["damage"])
 	enemy_stats.load_new_resource(cursed["stats"])
 	if cursed["effect"] != null:# and resource["effect"].has_method("trigger_effect"):
@@ -110,9 +113,12 @@ func enemy_cursed():
 
 func _on_EnemyHurtbox_area_entered(area):
 	if "Floor" in area.name:
-		enemy_entered_floor_hole()
 		Globalsignals.emit_signal("enemy_entered_hole")
+		_on_EnemyStats_no_health()
 	else:
+		if Options.audio_enabled:
+			hit_sound.volume_db = Options.audio_volume
+			hit_sound.play()
 		match area.hitbox_name:
 			"Melee":
 				if is_cursed:

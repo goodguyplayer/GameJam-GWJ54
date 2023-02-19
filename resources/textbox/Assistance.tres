@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://autoload/TextboxData.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+SpeakerTextureLeft = "res://resources/story_sprites/satin-1.png"
+SpeakerTextureRight = "res://icon.png"
+title = "Assistance"
+SpeakerLeftVisibility = false
+SpeakerRightVisibility = false
+text_queue = [ "To kill an enemy, you must first curse it", "Once cursed, a status symbol will appear on top of it.", "That's when they'll take damage from your bullets or melee.", "Keep in mind that your melee attacks happen based on your player movement, while ranged goes by mouse." ]

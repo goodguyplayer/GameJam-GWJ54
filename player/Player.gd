@@ -36,9 +36,14 @@ onready var ranged_cursed_assistant = $RangedCursedAssistant
 onready var remote_transform_2d = $RemoteTransform2D
 onready var hurtbox = $Hurtbox
 
+onready var melee_sound = $Melee
+onready var hit_sound = $Hit
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	animation_tree.active = true
 	melee_hitbox.knockback_vector = roll_vector
 	Globalsignals.connect("curse_player_new", self, "_load_curse_effect")
@@ -122,6 +127,8 @@ func dodge_state() -> void:
 
 func attack_state_melee(delta) -> void:
 	animation_state.travel("Melee")
+	if Options.audio_enabled:
+		melee_sound.volume_db = Options.audio_volume
 	move()
 	
 	
@@ -187,6 +194,9 @@ func _on_Hurtbox_area_entered(area):
 		player_entered_floor_hole()
 		Globalsignals.emit_signal("player_entered_hole")
 	else:
+		if Options.audio_enabled:
+			hit_sound.volume_db = Options.audio_volume
+			hit_sound.play()
 		match area.hitbox_name:
 			"Melee":
 				player_stats.health -= area.damage

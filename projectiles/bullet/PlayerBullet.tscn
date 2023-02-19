@@ -11,6 +11,7 @@ script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
 animation = "player_bullet"
+frame = 1
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 0, 0 )
@@ -24,6 +25,9 @@ hitbox_name = "Bullet"
 position = Vector2( 8, 0 )
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer2D" parent="." index="3"]
+autoplay = false
 
 [connection signal="body_entered" from="BulletHitbox" to="." method="_on_BulletHitbox_body_entered"]
 

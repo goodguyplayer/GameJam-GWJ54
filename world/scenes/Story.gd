@@ -42,6 +42,7 @@ var textbox_data = [
 	preload("res://resources/textbox/30-WhatHappensIfIFall.tres"), 
 	preload("res://resources/textbox/31-ThatsWhenTheShowStarts.tres"),
 	preload("res://resources/textbox/32-GoOnPractice.tres"), 
+	preload("res://resources/textbox/Assistance.tres"),
 	preload("res://resources/textbox/33-SeeThatWasnt.tres"), 
 	preload("res://resources/textbox/34-OhNo.tres"), 
 	preload("res://resources/textbox/35-EhBound.tres")
@@ -76,7 +77,7 @@ func _update_next_textbox(value):
 		emit_signal("first_part_plot_done")
 		self.visible = false
 	
-	elif value == "GoOnPractice":
+	elif value == "Assistance":
 		get_tree().paused = false
 		emit_signal("summon_to_practice")
 		self.visible = false
