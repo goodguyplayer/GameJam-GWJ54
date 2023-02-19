@@ -58,6 +58,7 @@ script = ExtResource( 5 )
 position = Vector2( -7.15256e-07, 0 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 87 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -104,6 +105,9 @@ autostart = true
 [node name="VectorAssistant" parent="." instance=ExtResource( 9 )]
 script = ExtResource( 8 )
 
+[node name="Sprite" parent="VectorAssistant" index="0"]
+visible = false
+
 [connection signal="body_entered" from="ChaseTriggerBox" to="ChaseTriggerBox" method="_on_ChaseTriggerBox_body_entered"]
 [connection signal="body_exited" from="ChaseTriggerBox" to="ChaseTriggerBox" method="_on_ChaseTriggerBox_body_exited"]
 [connection signal="area_entered" from="EnemyHurtbox" to="." method="_on_EnemyHurtbox_area_entered"]
@@ -113,3 +117,4 @@ script = ExtResource( 8 )
 
 [editable path="ChaseTriggerBox"]
 [editable path="EnemyHurtbox"]
+[editable path="VectorAssistant"]

@@ -1553,7 +1553,7 @@ states/Weapon/node = SubResource( 56 )
 states/Weapon/position = Vector2( -43, 93 )
 transitions = [ "Idle", "Move", SubResource( 38 ), "Move", "Idle", SubResource( 39 ), "Idle", "Weapon", SubResource( 72 ), "Weapon", "Idle", SubResource( 73 ), "Idle", "Melee", SubResource( 74 ), "Melee", "Idle", SubResource( 75 ), "Dodge", "Idle", SubResource( 76 ), "Idle", "Dodge", SubResource( 77 ), "Idle", "Curse", SubResource( 78 ), "Curse", "Idle", SubResource( 79 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -448.645, -27 )
+graph_offset = Vector2( -472.645, -124 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=32]
 
@@ -1628,6 +1628,7 @@ position = Vector2( 0, -8 )
 script = ExtResource( 8 )
 
 [node name="Sprite" parent="RangedCursedAssistant" index="0"]
+visible = false
 position = Vector2( 16, 1.42109e-14 )
 scale = Vector2( 0.2, 0.0639535 )
 
@@ -1647,6 +1648,7 @@ script = ExtResource( 6 )
 position = Vector2( 0, -0.999998 )
 rotation = 1.5708
 shape = SubResource( 82 )
+disabled = true
 
 [node name="Sprite" type="Sprite" parent="MeleeHitboxPivot"]
 visible = false
