@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://world/floor/image/floortemp.png" type="Texture" id=1]
+[ext_resource path="res://resources/assets/Tiles.png" type="Texture" id=1]
 [ext_resource path="res://world/floor/Floor.gd" type="Script" id=2]
+[ext_resource path="res://resources/assets/alert.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12, 12 )
@@ -10,11 +11,19 @@ extents = Vector2( 12, 12 )
 collision_layer = 2
 collision_mask = 72
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -1.43051e-06, 4.76837e-07 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( -1.43051e-06, -7.15256e-07 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
+
+[node name="SpriteAlert" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

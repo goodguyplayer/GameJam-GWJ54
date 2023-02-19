@@ -1,6 +1,9 @@
 extends Area2D
 
 onready var collision_shape_2d = $CollisionShape2D
+onready var sprite_alert = $SpriteAlert
+onready var sprite = $Sprite
+
 
 export var collision_status = false
 
@@ -16,5 +19,17 @@ func change_collision_swap():
 	
 	
 func change_collision(value : bool) -> void:
+	if not value:
+		sprite_alert.visible = true
+		yield(get_tree().create_timer(0.1), "timeout")
+		sprite_alert.visible = false
+		yield(get_tree().create_timer(0.1), "timeout")
+		sprite_alert.visible = true
+		yield(get_tree().create_timer(0.1), "timeout")
+		sprite_alert.visible = false
+		sprite.visible = false
+	else:
+		sprite.visible = true
+		
 	collision_shape_2d.disabled = value
 	collision_status = collision_shape_2d.disabled 
