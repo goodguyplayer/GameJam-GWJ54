@@ -73,7 +73,7 @@ func load_new_curse() -> void:
 		
 		$HBoxContainer/MarginContainerFinal/CurseFinal/MarginContainer/HBoxContainer/Name.text = final_curse.CurseName
 		$HBoxContainer/MarginContainerFinal/CurseFinal/MarginContainer/HBoxContainer/Description.text = final_curse.CurseDesc
-		$HBoxContainer/MarginContainerFinal/CurseFinal/Image.texture = load(final_curse.CurseImagePath)
+#		$HBoxContainer/MarginContainerFinal/CurseFinal/Image.texture = load(final_curse.CurseImagePath)
 		
 		if Options.music_enabled:
 			music.volume_db = Options.music_volume

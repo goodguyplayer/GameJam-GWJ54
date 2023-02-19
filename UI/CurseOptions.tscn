@@ -43,6 +43,7 @@ margin_bottom = 256.0
 rect_min_size = Vector2( 125, 253 )
 
 [node name="Image" type="TextureRect" parent="HBoxContainer/MarginContainer/Curse1"]
+visible = false
 margin_right = 125.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 0, 64 )
@@ -50,9 +51,8 @@ expand = true
 stretch_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/Curse1"]
-margin_top = 68.0
 margin_right = 125.0
-margin_bottom = 160.0
+margin_bottom = 92.0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/Curse1/MarginContainer"]
 margin_right = 125.0
@@ -96,6 +96,7 @@ margin_bottom = 256.0
 rect_min_size = Vector2( 125, 0 )
 
 [node name="Image" type="TextureRect" parent="HBoxContainer/MarginContainer2/Curse2"]
+visible = false
 margin_right = 125.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 0, 64 )
@@ -103,9 +104,8 @@ expand = true
 stretch_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer2/Curse2"]
-margin_top = 68.0
 margin_right = 125.0
-margin_bottom = 160.0
+margin_bottom = 92.0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer2/Curse2/MarginContainer"]
 margin_right = 125.0
@@ -147,6 +147,7 @@ margin_bottom = 256.0
 rect_min_size = Vector2( 125, 0 )
 
 [node name="Image" type="TextureRect" parent="HBoxContainer/MarginContainer3/Curse3"]
+visible = false
 margin_right = 125.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 0, 64 )
@@ -154,9 +155,8 @@ expand = true
 stretch_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer3/Curse3"]
-margin_top = 68.0
 margin_right = 125.0
-margin_bottom = 160.0
+margin_bottom = 92.0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer3/Curse3/MarginContainer"]
 margin_right = 125.0
@@ -199,6 +199,7 @@ margin_bottom = 256.0
 rect_min_size = Vector2( 125, 0 )
 
 [node name="Image" type="TextureRect" parent="HBoxContainer/MarginContainerFinal/CurseFinal"]
+visible = false
 margin_right = 125.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 0, 64 )
