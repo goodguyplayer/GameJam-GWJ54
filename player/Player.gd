@@ -148,8 +148,6 @@ func curse_animation_finished():
 
 func player_entered_floor_hole():
 	animation_player.play("death_fall")
-	Globalsignals.emit_signal("player_died")
-	queue_free()
 
 
 func _load_curse_effect(resource : Dictionary):
@@ -170,6 +168,9 @@ func _on_TimerCanFire_timeout():
 
 func _on_PlayerStats_no_health():
 	animation_player.play("death_default")
+	
+
+func _player_died_post_animation():
 	Globalsignals.emit_signal("player_died")
 	queue_free()
 

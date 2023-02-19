@@ -264,7 +264,21 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 7, 8, 9, 10, 11, 12 ]
+"values": [ 7, 8, 9, 10, 12, 12 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_player_died_post_animation"
+} ]
 }
 
 [sub_resource type="Animation" id=84]
@@ -280,7 +294,21 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 7, 8, 9, 10, 11 ]
+"values": [ 7, 8, 9, 10, 12 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_player_died_post_animation"
+} ]
 }
 
 [sub_resource type="Animation" id=15]
