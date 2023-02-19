@@ -24,6 +24,8 @@ export var default_config : Dictionary = {
 		"ui_attack_ranged" : 82,
 		"ui_pause" : 80,
 		"ui_textbutton" : 16777221,
+		"mouse_1" : true,
+		"mouse_2" : true,
 	}
 
 
@@ -54,20 +56,33 @@ func load_file() -> void:
 		var error = file.open(save_path, File.READ)
 		if error == OK:
 			var options_data = file.get_var()
-			self.music_volume = options_data["music_value"]
-			self.audio_volume = options_data["audio_value"]
-			self.music_enabled = options_data["music_enabled"]
-			self.audio_enabled = options_data["audio_enabled"]
+			set_music_volume(options_data["music_value"])
+			set_audio_volume(options_data["audio_value"])
+			set_music_enabled(options_data["music_enabled"])
+			set_audio_enabled(options_data["audio_enabled"])
 			load_inputs("ui_up", options_data)
 			load_inputs("ui_left", options_data)
 			load_inputs("ui_right", options_data)
 			load_inputs("ui_down", options_data)
 			load_inputs("ui_dodge", options_data)
 			load_inputs("ui_curse", options_data)
-			load_inputs("ui_attack_melee", options_data)
-			load_inputs("ui_attack_ranged", options_data)
+#			load_inputs("ui_attack_melee", options_data)
+#			load_inputs("ui_attack_ranged", options_data)
 			load_inputs("ui_pause", options_data)
 			load_inputs("ui_textbutton", options_data)
+			
+			if options_data["mouse_1"]:
+				var load_input_event = InputEventMouseButton.new()
+				load_input_event.set_button_index(1)
+				InputMap.action_erase_events("ui_attack_melee")
+				InputMap.action_add_event("ui_attack_melee", load_input_event)
+			
+			if options_data["mouse_2"]:
+				var load_input_event = InputEventMouseButton.new()
+				load_input_event.set_button_index(2)
+				InputMap.action_erase_events("ui_attack_ranged")
+				InputMap.action_add_event("ui_attack_ranged", load_input_event)
+			
 			file.close()
 
 

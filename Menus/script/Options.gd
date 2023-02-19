@@ -6,6 +6,8 @@ onready var audio_value = $MarginContainer/VBoxContainer/HBoxContainer/Value
 onready var audio_slider = $MarginContainer/VBoxContainer/HBoxContainer/Audio_slider
 onready var music_enabled = $MarginContainer/VBoxContainer/HBoxContainer2/MusicEnabled
 onready var audio_enabled = $MarginContainer/VBoxContainer/HBoxContainer3/AudioEnabled
+onready var mouse_1 = $MarginContainer/VBoxContainer/HBoxContainer10/HBoxContainer/Label2
+onready var mouse_2 = $MarginContainer/VBoxContainer/HBoxContainer11/HBoxContainer/Label2
 
 
 func _ready():
@@ -27,11 +29,14 @@ func get_current_options() -> Dictionary:
 		"ui_down" : InputMap.get_action_list("ui_down")[0].scancode,
 		"ui_dodge" : InputMap.get_action_list("ui_dodge")[0].scancode,
 		"ui_curse" : InputMap.get_action_list("ui_curse")[0].scancode,
-		"ui_attack_melee" : InputMap.get_action_list("ui_attack_melee")[0].scancode,
-		"ui_attack_ranged" : InputMap.get_action_list("ui_attack_ranged")[0].scancode,
+		"ui_attack_melee" : 1 if mouse_1.pressed else InputMap.get_action_list("ui_attack_melee")[0].scancode,
+		"ui_attack_ranged" : 1 if mouse_2.pressed else InputMap.get_action_list("ui_attack_ranged")[0].scancode,
 		"ui_pause" : InputMap.get_action_list("ui_pause")[0].scancode,
 		"ui_textbutton" : InputMap.get_action_list("ui_textbutton")[0].scancode,
+		"mouse_1" : true if mouse_1.pressed else false,
+		"mouse_2" : true if mouse_2.pressed else false,
 	}
+	
 	
 	return options_set
 
@@ -42,7 +47,7 @@ func _on_Save_pressed():
 
 func _on_Cancel_pressed():
 	Options.load_file()
-	queue_free()
+	
 
 
 func _on_Reset_pressed():
