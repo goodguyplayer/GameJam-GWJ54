@@ -6,6 +6,7 @@ var original_curse_array = [
 	preload("res://resources/curses/curse_of_giantism.tres"),
 	preload("res://resources/curses/curse_of_dwarfness.tres"), 
 	preload("res://resources/curses/curse_of_slipness.tres"),
+	preload("res://resources/curses/curse_of_slow_shot.tres")
 #	preload(),
 ]
 var curse_array = []
