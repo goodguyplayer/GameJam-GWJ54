@@ -534,6 +534,7 @@ length = 0.4
 [sub_resource type="Animation" id=19]
 resource_name = "idle_down"
 length = 0.4
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -562,6 +563,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=20]
 resource_name = "idle_left"
 length = 0.4
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -590,6 +592,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=21]
 resource_name = "idle_right"
 length = 0.4
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -618,6 +621,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=22]
 resource_name = "idle_up"
 length = 0.4
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -1150,6 +1154,7 @@ tracks/9/keys = {
 [sub_resource type="Animation" id=23]
 resource_name = "move_down"
 length = 0.4
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -1178,6 +1183,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=24]
 resource_name = "move_left"
 length = 0.4
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -1206,6 +1212,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=25]
 resource_name = "move_right"
 length = 0.4
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -1234,6 +1241,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=3]
 resource_name = "move_up"
 length = 0.4
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -1552,7 +1560,7 @@ states/Weapon/node = SubResource( 56 )
 states/Weapon/position = Vector2( -43, 93 )
 transitions = [ "Idle", "Move", SubResource( 38 ), "Move", "Idle", SubResource( 39 ), "Idle", "Weapon", SubResource( 72 ), "Weapon", "Idle", SubResource( 73 ), "Idle", "Melee", SubResource( 74 ), "Melee", "Idle", SubResource( 75 ), "Dodge", "Idle", SubResource( 76 ), "Idle", "Dodge", SubResource( 77 ), "Idle", "Curse", SubResource( 78 ), "Curse", "Idle", SubResource( 79 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -472.645, -124 )
+graph_offset = Vector2( -445.645, 38 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=32]
 
@@ -1568,12 +1576,6 @@ height = 0.0
 position = Vector2( 0, 8 )
 collision_layer = 4
 script = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -8 )
-texture = ExtResource( 1 )
-hframes = 16
-frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -8 )
@@ -1613,6 +1615,7 @@ anims/weapon_up = SubResource( 51 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 31 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 32 )
 parameters/Curse/blend_position = Vector2( 0, 0 )
 parameters/Dodge/blend_position = Vector2( 0, 0 )
@@ -1681,6 +1684,12 @@ wait_time = 0.5
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 remote_path = NodePath("../Camera2D")
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 1 )
+hframes = 16
+frame = 1
 
 [node name="Camera2D" parent="." instance=ExtResource( 10 )]
 
