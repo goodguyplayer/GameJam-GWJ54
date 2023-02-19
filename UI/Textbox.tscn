@@ -1,9 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://UI/Textbox.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://UI/TextboxTextures/DefaultStyleBox.tres" type="StyleBox" id=3]
 [ext_resource path="res://resources/textbox/textboxTest.tres" type="Resource" id=4]
+[ext_resource path="res://resources/font_adventurer_dynamic.tres" type="DynamicFont" id=5]
+[ext_resource path="res://resources/assets/Font/Adventurer.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://resources/assets/Font/Adventurer.ttf"
+
+[sub_resource type="DynamicFont" id=1]
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 6 )
 
 [node name="Textbox" type="CanvasLayer"]
 pause_mode = 2
@@ -64,6 +76,7 @@ margin_right = 14.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 14, 32 )
 size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
 text = "*"
 
 [node name="Body" type="Label" parent="TextBoxContainer/Panel/MarginContainer/HBoxContainer"]
@@ -72,6 +85,7 @@ margin_right = 910.0
 margin_bottom = 120.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
 autowrap = true
 clip_text = true
 
@@ -82,6 +96,7 @@ margin_right = 928.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 14, 32 )
 size_flags_vertical = 12
+custom_fonts/font = ExtResource( 5 )
 text = "V"
 
 [node name="Tween" type="Tween" parent="."]

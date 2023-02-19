@@ -101,7 +101,7 @@ func enemy_cursed():
 	var cursed = Curse.obtain_curse_enemy_ranged()
 	is_cursed = true
 	vector_assistant.is_cursed = true
-	
+	cursed_symbol.visible = true
 #	bullet.load_new_stats(cursed["damage"])
 	enemy_stats.load_new_resource(cursed["stats"])
 	if cursed["effect"] != null:# and resource["effect"].has_method("trigger_effect"):

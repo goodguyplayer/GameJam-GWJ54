@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/WinScreen.gd" type="Script" id=1]
+[ext_resource path="res://resources/font_adventurer_dynamic.tres" type="DynamicFont" id=2]
+[ext_resource path="res://resources/assets/Font/Adventurer.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0980392, 0, 0.00392157, 1 )
@@ -9,6 +11,10 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 3 )
 
 [node name="YouWin" type="Control"]
 anchor_right = 1.0
@@ -21,10 +27,14 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.392157 )
 
 [node name="Panel" type="Panel" parent="."]
-margin_left = 256.0
-margin_top = 140.0
-margin_right = 768.0
-margin_bottom = 460.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -264.0
+margin_top = -94.0
+margin_right = 264.0
+margin_bottom = 94.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -32,60 +42,66 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -252.0
-margin_top = -156.0
-margin_right = 252.0
-margin_bottom = 156.0
+margin_left = -260.0
+margin_top = -88.0
+margin_right = 260.0
+margin_bottom = 88.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_right = 504.0
-margin_bottom = 312.0
+margin_right = 520.0
+margin_bottom = 176.0
 
 [node name="Win" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_right = 504.0
+margin_right = 520.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 0, 32 )
-text = "A winner is you!"
+custom_fonts/font = SubResource( 2 )
+text = "YOU HAVE ESCAPED HELL"
 align = 1
 valign = 1
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 margin_top = 36.0
-margin_right = 504.0
-margin_bottom = 256.0
-rect_min_size = Vector2( 0, 220 )
+margin_right = 520.0
+margin_bottom = 146.0
+rect_min_size = Vector2( 0, 110 )
+custom_fonts/font = ExtResource( 2 )
 text = "After many years, you've managed to break the curse powers. You're free now, free to enjoy immortality."
 align = 1
+valign = 1
 autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 260.0
-margin_right = 504.0
-margin_bottom = 280.0
+margin_top = 150.0
+margin_right = 520.0
+margin_bottom = 172.0
 alignment = 1
 
 [node name="StartAgain" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 14.0
-margin_right = 135.0
-margin_bottom = 20.0
+margin_right = 139.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 2 )
 text = "Start a new game"
 
 [node name="TryEndless" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 139.0
-margin_right = 265.0
-margin_bottom = 20.0
+margin_left = 143.0
+margin_right = 281.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 2 )
 text = "Try endless mode"
 
 [node name="ReturnMenu" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 269.0
-margin_right = 381.0
-margin_bottom = 20.0
+margin_left = 285.0
+margin_right = 406.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 2 )
 text = "Return to menu"
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 385.0
-margin_right = 489.0
-margin_bottom = 20.0
+margin_left = 410.0
+margin_right = 520.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 2 )
 text = "Quit the game"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/StartAgain" to="." method="_on_StartAgain_pressed"]
