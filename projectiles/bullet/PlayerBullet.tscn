@@ -10,7 +10,8 @@ radius = 8.0
 script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
-animation = "Player"
+animation = "player_bullet"
+frame = 0
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 0, 0 )

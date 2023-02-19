@@ -8,6 +8,9 @@ radius = 8.0
 [node name="EnemyBullet" instance=ExtResource( 1 )]
 hitbox_name = "Bullet"
 
+[node name="Sprite" parent="." index="0"]
+frame = 0
+
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 0, 0 )
 
