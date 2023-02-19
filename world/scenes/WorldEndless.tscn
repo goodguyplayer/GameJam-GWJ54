@@ -175,5 +175,7 @@ position = Vector2( 800, 296 )
 [node name="EnemySpawn6" type="Position2D" parent="EnemySpawners"]
 position = Vector2( 192, 520 )
 
+[node name="Music" type="AudioStreamPlayer" parent="."]
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="TimerEnemy" to="." method="_on_TimerEnemy_timeout"]

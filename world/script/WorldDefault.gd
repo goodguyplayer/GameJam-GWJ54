@@ -22,6 +22,13 @@ var round_counter = 0
 var check_enemy_amount = false
 var final_curse_test = false
 
+var music_list = [
+	preload("res://resources/music/DavidKBD - Eternity Pack - 03 - I Can See You - loop.ogg"), 
+	preload("res://resources/music/DavidKBD - Eternity Pack - 05 - Evil soul inside - loop.ogg"), 
+	preload("res://resources/music/DavidKBD - Eternity Pack - 06 - God of darkness - loop.ogg"), 
+	preload("res://resources/music/DavidKBD - Eternity Pack - 09 - Soul evisceration - loop.ogg")
+]
+
 onready var test_floor = $Floor
 onready var timer_floor = $Timer
 onready var timer_enemy = $TimerEnemy
@@ -31,6 +38,9 @@ onready var enemy_spawners = $EnemySpawners
 #onready var enemy_spawned = $EnemySpawned
 onready var camera_2d = $Camera2D
 onready var canvas_layer = $CanvasLayer
+onready var music = $Music
+
+
 
 
 
@@ -77,6 +87,11 @@ func spawn_object(object, position):
 
 	
 func next_round():
+	if Options.music_enabled:
+		music_list.shuffle()
+		music.volume_db = Options.music_volume
+		music.stream = music_list[0]
+		music.play()
 	timer_floor.stop()
 	timer_enemy.stop()
 	round_counter += 1

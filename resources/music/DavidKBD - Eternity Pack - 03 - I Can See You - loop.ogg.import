@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DavidKBD - Eternity Pack - 03 - I Can See You - loop.ogg-66fd38ea0d32c9c6f2cdb283c4a4c3a3.oggstr"
+
+[deps]
+
+source_file="res://resources/music/DavidKBD - Eternity Pack - 03 - I Can See You - loop.ogg"
+dest_files=[ "res://.import/DavidKBD - Eternity Pack - 03 - I Can See You - loop.ogg-66fd38ea0d32c9c6f2cdb283c4a4c3a3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

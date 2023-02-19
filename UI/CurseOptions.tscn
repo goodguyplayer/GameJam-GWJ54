@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://UI/CurseOptions.gd" type="Script" id=1]
 [ext_resource path="res://resources/font_adventurer_dynamic.tres" type="DynamicFont" id=2]
+[ext_resource path="res://resources/music/DavidKBD - Eternity Pack - 11 - Screams in the Distance - loop.ogg" type="AudioStream" id=3]
 
 [node name="CurseOptions" type="Control"]
 pause_mode = 2
@@ -240,6 +241,9 @@ margin_bottom = 136.0
 text = "CHOOSE A NEW CURSE"
 align = 1
 valign = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="pressed" from="HBoxContainer/MarginContainer/Curse1/MarginContainer/HBoxContainer/Curse1Button" to="." method="_on_Curse1Button_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer2/Curse2/MarginContainer/HBoxContainer/Curse2Button" to="." method="_on_Curse2Button_pressed"]

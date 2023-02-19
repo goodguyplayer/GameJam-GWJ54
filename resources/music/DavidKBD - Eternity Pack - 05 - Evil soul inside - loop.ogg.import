@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DavidKBD - Eternity Pack - 05 - Evil soul inside - loop.ogg-7b1337eef64da412758bd42c2db6457e.oggstr"
+
+[deps]
+
+source_file="res://resources/music/DavidKBD - Eternity Pack - 05 - Evil soul inside - loop.ogg"
+dest_files=[ "res://.import/DavidKBD - Eternity Pack - 05 - Evil soul inside - loop.ogg-7b1337eef64da412758bd42c2db6457e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DavidKBD - Eternity Pack - 06 - God of darkness - loop.ogg-81071a93c96fe010e39449c58ced53df.oggstr"
+
+[deps]
+
+source_file="res://resources/music/DavidKBD - Eternity Pack - 06 - God of darkness - loop.ogg"
+dest_files=[ "res://.import/DavidKBD - Eternity Pack - 06 - God of darkness - loop.ogg-81071a93c96fe010e39449c58ced53df.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
