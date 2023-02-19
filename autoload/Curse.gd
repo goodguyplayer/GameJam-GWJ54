@@ -4,7 +4,8 @@ var original_curse_array = [
 	preload("res://resources/curses/haste_curse.tres"),
 	preload("res://resources/curses/slow_curse.tres"),
 	preload("res://resources/curses/curse_of_giantism.tres"),
-	
+	preload("res://resources/curses/curse_of_dwarfness.tres"), 
+	preload("res://resources/curses/curse_of_slipness.tres"),
 #	preload(),
 ]
 var curse_array = []

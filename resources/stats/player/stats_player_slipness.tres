@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource( 1 )
-max_health = 1
-acceleration = 150
-max_speed = 25
+max_health = 5
+acceleration = 500
+max_speed = 150
 roll_speed = 200
-friction = 200
+friction = 10
 bullet_speed = 1000
-timer_fire_weapon = 1.5
+timer_fire_weapon = 0.6
